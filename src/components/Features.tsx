@@ -10,14 +10,14 @@ const Card = ({
 	bgColor: string
 }) => {
 	return (
-		<div className='flex flex-col gap-2 bg-white border bg-white p-4 rounded-3xl '>
+		<div className='flex flex-col items-center md:items-start gap-2 bg-white border p-6 rounded-3xl shadow-md'>
 			<div
 				className={`flex items-center justify-center w-16 h-16 ${bgColor} rounded-full text-3xl`}
 			>
 				{icon}
 			</div>
-			<h3 className='text-xl font-bold'>{title}</h3>
-			<p className='text-gray-600 text-sm'>{text}</p>
+			<h3 className='text-xl font-bold text-center md:text-left'>{title}</h3>
+			<p className='text-gray-600 text-sm text-center md:text-left'>{text}</p>
 		</div>
 	)
 }
@@ -45,11 +45,11 @@ const Features = () => {
 	]
 
 	return (
-		<div className='flex py-16 flex-col gap-4 max-w-[768px] mx-auto'>
-			<h2 className='text-3xl font-bold text-center text-gray-900'>
+		<div className='flex py-16 flex-col gap-6 max-w-[1024px] mx-auto px-4'>
+			<h2 className='text-3xl sm:text-4xl font-bold text-center text-gray-900'>
 				Чем я могу помочь?
 			</h2>
-			<div className='grid gap-4 md:grid-cols-3'>
+			<div className='grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
 				{cards.map((card, index) => (
 					<Card
 						key={index}
