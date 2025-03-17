@@ -15,15 +15,43 @@ const ClientOnly = ({ children }: { children: React.ReactNode }) => {
 	return isClient ? <>{children}</> : <div style={{ height: '200px' }}></div>
 }
 
-const Hero = () => {
-	const polishWords = [
-		{ word: 'Dzień dobry', translation: 'Добрый день' },
-		{ word: 'Dziękuję', translation: 'Спасибо' },
-	]
+// Floating animation keyframes
+const floatingAnimation = `
+@keyframes float1 {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
 
+@keyframes float2 {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float3 {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-1 {
+  animation: float1 4s ease-in-out infinite;
+}
+
+.float-2 {
+  animation: float2 6s ease-in-out infinite;
+}
+
+.float-3 {
+  animation: float3 5s ease-in-out infinite;
+}
+`
+
+const Hero = () => {
 	// Базовый заголовок с изменяемой частью
-	const baseHeadline = "Изучайте польский язык с помощью "
-	const changingWords = ["AI", "искусственного интеллекта", "тренажера", "консультанта", "бота"]
+	const baseHeadline = "Изучай польский с помощью "
+	const changingWords = ["тренажера", "AI-консультанта", "проверки уровня", "напоминаний слов"]
 	
 	// Инициализируем с базовым заголовком, чтобы избежать пустого состояния
 	const [displayText, setDisplayText] = useState(baseHeadline)
@@ -64,27 +92,32 @@ const Hero = () => {
 
 	return (
 		<div className='relative w-full py-24 bg-[#BC4B3E] text-white overflow-hidden'>
-			{/* Background decorative elements */}
-			<div className="absolute inset-0 overflow-hidden">
-				<div className="absolute -left-20 top-1/3 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
-				<div className="absolute right-0 bottom-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-				<div className="absolute right-1/4 top-1/4 w-8 h-8 bg-purple-300/30 rounded-full"></div>
-				<div className="absolute left-1/3 bottom-1/4 w-4 h-4 bg-purple-300/30 rounded-full"></div>
-				<div className="absolute right-1/3 bottom-1/3 w-6 h-6 text-purple-300/70">✦</div>
-			</div>
+			{/* Add animation styles */}
+			<style jsx global>{floatingAnimation}</style>
 
 			<div className='max-w-7xl mx-auto px-6 relative z-10'>
-				{/* Word bubbles */}
-				<div className="absolute left-1/4 -top-4">
-					<div className="bg-white text-[#1e1b4b] px-4 py-2 rounded-full font-medium">
-						{polishWords[0].word}
-						<span className="block text-sm text-gray-500">{polishWords[0].translation}</span>
+				{/* Chat messages */}
+				<div className="absolute left-0 -top-10 max-w-[200px] float-1">
+					<div className="bg-white text-[#1e1b4b] px-4 py-3 rounded-2xl font-medium shadow-md mb-2 relative">
+						Dzień dobry
+						<span className="block text-sm text-gray-500">Добрый день</span>
+						<div className="absolute -bottom-2 left-4 w-4 h-4 bg-white transform rotate-45"></div>
 					</div>
 				</div>
-				<div className="absolute right-1/4 top-20">
-					<div className="bg-white text-[#1e1b4b] px-4 py-2 rounded-full font-medium">
-						{polishWords[1].word}
-						<span className="block text-sm text-gray-500">{polishWords[1].translation}</span>
+				
+				<div className="absolute right-0 -top-5 max-w-[200px] float-2">
+					<div className="bg-white text-[#1e1b4b] px-4 py-3 rounded-2xl font-medium shadow-md mb-2 relative">
+						Karta Polaka
+						<span className="block text-sm text-gray-500">Карта Поляка</span>
+						<div className="absolute -bottom-2 right-4 w-4 h-4 bg-white transform rotate-45"></div>
+					</div>
+				</div>
+				
+				<div className="absolute left-0 bottom-0 max-w-[200px] float-3">
+					<div className="bg-white text-[#1e1b4b] px-4 py-3 rounded-2xl font-medium shadow-md mb-2 relative">
+						Nauka słów
+						<span className="block text-sm text-gray-500">Изучение слов</span>
+						<div className="absolute -bottom-2 left-4 w-4 h-4 bg-white transform rotate-45"></div>
 					</div>
 				</div>
 
@@ -93,15 +126,16 @@ const Hero = () => {
 					{/* Title with typing effect - fixed height container */}
 					<div className="h-[200px] flex items-center justify-center">
 						<ClientOnly>
-							<h1 className='text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight'>
-								<span className="inline-block text-center">{displayText}|</span>
+							<h1 className='text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight flex flex-col'>
+								<span className="inline-block text-center">Изучай польский с помощью</span>
+								<span className="inline-block text-center mt-4">{displayText.substring(baseHeadline.length) || " "}|</span>
 							</h1>
 						</ClientOnly>
 					</div>
 
 					{/* Subtitle */}
 					<p className='text-xl sm:text-2xl mb-12 max-w-3xl mx-auto text-gray-300'>
-						Учите польский язык и готовьтесь к Карте Поляка с помощью искусственного интеллекта
+						Готовьтесь к Карте Поляка эффективно: интерактивные тренировки, языковые тесты и умные напоминания
 					</p>
 
 					{/* Button */}
@@ -113,13 +147,6 @@ const Hero = () => {
 						</Button>
 					</div>
 				</div>
-			</div>
-
-			{/* Wave bottom */}
-			<div className="absolute bottom-0 left-0 right-0">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" className="w-full">
-					<path fill="white" fillOpacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
-				</svg>
 			</div>
 		</div>
 	)
