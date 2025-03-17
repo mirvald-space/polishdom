@@ -51,7 +51,7 @@ const floatingAnimation = `
 const Hero = () => {
 	// Базовый заголовок с изменяемой частью
 	const baseHeadline = "Изучай польский с помощью "
-	const changingWords = ["тренажера", "AI-консультанта", "проверки уровня", "напоминаний слов"]
+	const changingWords = ["нашего бота", "AI-консула", "напоминаний слов"]
 	
 	// Инициализируем с базовым заголовком, чтобы избежать пустого состояния
 	const [displayText, setDisplayText] = useState(baseHeadline)
