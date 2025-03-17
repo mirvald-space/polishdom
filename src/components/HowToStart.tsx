@@ -71,7 +71,7 @@ const HowToStart = () => {
 	return (
 		<section className="py-16 px-4 bg-gray-50">
 			<div className="max-w-6xl mx-auto">
-				<h2 className="text-6xl font-bold text-center mb-4 animate-fade-in-down">
+				<h2 className="text-4xl font-bold text-center mb-4 animate-fade-in-down">
 					Что доступно в боте?
 				</h2>
 				
@@ -93,7 +93,7 @@ const HowToStart = () => {
 								</div>
 								
 								<div className="flex justify-end">
-									<div className="bg-blue-100 rounded-2xl py-3 px-4 max-w-[80%]">
+									<div className="bg-red-100 rounded-2xl py-3 px-4 max-w-[80%]">
 										<p className="text-gray-800">
 											Dzień dobry! Nazywam się Anna Kowalska.
 										</p>
@@ -112,22 +112,18 @@ const HowToStart = () => {
 								</div>
 								
 								<div className="flex justify-end">
-									<div className="bg-blue-100 rounded-2xl py-3 px-4 max-w-[80%]">
+									<div className="bg-red-100 rounded-2xl py-3 px-4 max-w-[80%]">
 										<p className="text-gray-800">
 											Mój dziadek pochodził z Polski, z Krakowa...
 										</p>
 									</div>
 								</div>
 								
-								<div className="mt-4 px-2">
-									<p className="text-sm text-gray-500 font-medium">Подсказка:</p>
-									<p className="text-sm text-gray-700">Расскажите о своих польских корнях, откуда родом ваши предки</p>
-								</div>
 							</div>
 						</div>
 						
-						<h3 className="text-3xl font-bold text-center mb-3">
-							Тренажер<br/>по собеседованию
+						<h3 className="text-xl font-bold text-center mb-3">
+							Тренажер по собеседованию
 						</h3>
 						<p className="text-center text-gray-500 mb-4">
 							Практикуйте разговорный польский<br/>с помощью симуляции реального<br/>собеседования на Карту поляка
@@ -136,12 +132,12 @@ const HowToStart = () => {
 
 					{/* Второй блок: Тестирование уровня */}
 					<div className="bg-white rounded-3xl p-4 shadow-sm flex flex-col">
-						<div className="bg-gray-50 rounded-3xl p-6 mb-6 relative min-h-80 max-h-96 overflow-auto">
-							<div className="flex flex-col space-y-4">
+						<div className="bg-gray-50 rounded-3xl p-4 mb-6 relative min-h-80 max-h-96 overflow-auto">
+							<div className="flex flex-col space-y-2">
 								{/* Сообщение пользователя - сначала печатающееся, потом перемещающееся вверх */}
 								<div className={`flex justify-end transition-all duration-700 ${userMessageMoved ? 'transform -translate-y-0 opacity-70 scale-95' : 'transform translate-y-8'}`}>
-									<div className="bg-blue-100 rounded-2xl py-3 px-4 max-w-[80%]">
-										<p className="text-gray-800">
+									<div className="bg-blue-100 rounded-2xl py-3 px-4 max-w-[90%]">
+										<p className="text-black">
 											{typingUserMessage}
 											<span className={`animate-blink ${typingUserMessage.length >= userFullMessage.length ? 'opacity-0' : ''}`}>|</span>
 										</p>
@@ -174,7 +170,7 @@ const HowToStart = () => {
 							</div>
 						</div>
 						
-						<h3 className="text-2xl font-bold text-center mb-3">
+						<h3 className="text-xl font-bold text-center mb-3">
 							Тестирование<br/>уровня владения языком
 						</h3>
 						<p className="text-center text-gray-500 mb-4">
@@ -253,7 +249,7 @@ const HowToStart = () => {
 
 						</div>
 						
-						<h3 className="text-3xl font-bold text-center mb-3">
+						<h3 className="text-xl font-bold text-center mb-3">
 						Учите новые слова
 						</h3>
 						<p className="text-center text-gray-500 mb-4">

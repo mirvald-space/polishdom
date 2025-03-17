@@ -4,6 +4,17 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { useState, useEffect } from 'react'
 
+// Client-only component wrapper
+const ClientOnly = ({ children }: { children: React.ReactNode }) => {
+	const [isClient, setIsClient] = useState(false)
+	
+	useEffect(() => {
+		setIsClient(true)
+	}, [])
+	
+	return isClient ? <>{children}</> : <div style={{ height: '200px' }}></div>
+}
+
 const Hero = () => {
 	const polishWords = [
 		{ word: 'Dzień dobry', translation: 'Добрый день' },
@@ -81,9 +92,11 @@ const Hero = () => {
 				<div className="text-center">
 					{/* Title with typing effect - fixed height container */}
 					<div className="h-[200px] flex items-center justify-center">
-						<h1 className='text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight'>
-							<span className="inline-block text-center">{displayText}|</span>
-						</h1>
+						<ClientOnly>
+							<h1 className='text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight'>
+								<span className="inline-block text-center">{displayText}|</span>
+							</h1>
+						</ClientOnly>
 					</div>
 
 					{/* Subtitle */}
