@@ -13,9 +13,8 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-
-      <QuickStart />
       <HowToStart />
+      <QuickStart />
       <Testimonials />
       <FAQ />
       <CTA />
