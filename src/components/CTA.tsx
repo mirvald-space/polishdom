@@ -21,18 +21,18 @@ const CTA = () => {
 			
 			<div className="max-w-4xl mx-auto text-center relative z-10">
 				<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-					Польский язык<br />с помощью AI
+				Новые слова каждый день
 				</h2>
 				
-				<p className="text-xl mb-8 text-gray-300 max-w-3xl mx-auto">
-					Запоминайте <span className="text-white font-medium">10 новых польских слов</span> каждый день,<br />
+				<p className="text-xl mb-8 text-gray-200 max-w-3xl mx-auto">
+					Запоминайте <span className="text-white font-medium">новые польские слова</span> каждый день,<br />
 					готовьтесь к Карте Поляка и повысьте свой уровень уже за месяц!
 				</p>
 				
 				<div className="mt-12">
-					<Button asChild size="lg" className="bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-8 py-6 text-lg font-medium">
+					<Button asChild size="lg" className="bg-white hover:bg-indigo-600 text-white rounded-full px-8 py-6 text-lg font-medium">
 						<Link href="https://t.me/polishbot">
-							Начать изучение польского
+							Хочу попробовать
 						</Link>
 					</Button>
 				</div>
