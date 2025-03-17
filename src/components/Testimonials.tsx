@@ -50,10 +50,10 @@ const Testimonials = () => {
 		<section className="py-20 px-4 bg-gray-50">
 			<div className="max-w-6xl mx-auto">
 				<h2 className="text-5xl font-bold text-center mb-4">
-					Отзывы о Wordich
+					Отзывы
 				</h2>
 				<p className="text-xl text-gray-500 text-center mb-16">
-					100,000+ людей уже учат новые слова в Telegram
+					200+ людей уже учат новые слова в Telegram
 				</p>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
