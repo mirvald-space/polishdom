@@ -1,25 +1,25 @@
-import AboutMe from '@/components/AboutMe'
-import CTA from '@/components/CTA'
-import FAQ from '@/components/FAQ'
-import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import HowToStart from '@/components/HowToStart'
+import Footer from '@/components/Footer'
+import Hero from '@/components/Hero'
+
 import Testimonials from '@/components/Testimonials'
-import Features from '../components/Features'; // Импортируем компонент Hero
-import Hero from '../components/Hero'
+import FAQ from '@/components/FAQ'
+import CTA from '@/components/CTA'
+import HowToStart from '@/components/HowToStart'
+import QuickStart from '@/components/QuickStart'
 
 export default function Home() {
   return (
-<>
-			<Header/>
-      <Hero /> 
-			<Features />
-			<AboutMe />
-			<HowToStart/>
-			<Testimonials/>
-			<FAQ/>
-			<CTA/>
-			<Footer/>
-</>
+    <>
+      <Header />
+      <Hero />
+
+      <QuickStart />
+      <HowToStart />
+      <Testimonials />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </>
   );
 }

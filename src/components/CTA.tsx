@@ -1,20 +1,43 @@
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 const CTA = () => {
 	return (
-		<div className='py-16 max-w-[768px] border rounded-xl mx-auto bg-white text-center'>
-			<h2 className='text-3xl font-bold'>Остались вопросы?</h2>
-			<p>
-				Я всегда готова на них ответить в любое время. Просто напишите мне в
-				Telegram!
-			</p>
-			<Link
-				href='https://t.me/your_bot_username' // Замените на ссылку на вашего бота
-				className='bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors'
-			>
-				Написать в Telegram
-			</Link>
-		</div>
+		<section className="py-24 px-4 bg-[#BC4B3E] text-white relative overflow-hidden">
+			{/* Decorative elements */}
+			<div className="absolute inset-0 overflow-hidden">
+				<div className="absolute top-20 left-20 w-4 h-4 bg-purple-300/30 rounded-full"></div>
+				<div className="absolute bottom-40 right-1/4 w-6 h-6 bg-purple-300/30 rounded-full"></div>
+				<div className="absolute top-1/3 right-1/4 w-8 h-8 text-purple-300/70">✦</div>
+				<div className="absolute bottom-1/3 left-1/4 w-6 h-6 text-purple-300/70">✧</div>
+			</div>
+			
+			{/* Speech bubble */}
+			<div className="absolute top-20 right-1/4">
+				<div className="bg-indigo-500 text-white px-6 py-3 rounded-full text-lg font-medium">
+					To jest wspaniałe!
+				</div>
+			</div>
+			
+			<div className="max-w-4xl mx-auto text-center relative z-10">
+				<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+					Польский язык<br />с помощью AI
+				</h2>
+				
+				<p className="text-xl mb-8 text-gray-300 max-w-3xl mx-auto">
+					Запоминайте <span className="text-white font-medium">10 новых польских слов</span> каждый день,<br />
+					готовьтесь к Карте Поляка и повысьте свой уровень уже за месяц!
+				</p>
+				
+				<div className="mt-12">
+					<Button asChild size="lg" className="bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-8 py-6 text-lg font-medium">
+						<Link href="https://t.me/polishbot">
+							Начать изучение польского
+						</Link>
+					</Button>
+				</div>
+			</div>
+		</section>
 	)
 }
 
