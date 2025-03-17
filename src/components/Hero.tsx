@@ -91,56 +91,50 @@ const Hero = () => {
 	}, [displayText, isDeleting, wordIndex, changingWords, typingSpeed, baseHeadline])
 
 	return (
-		<div className='relative w-full py-24 bg-[#BC4B3E] text-white overflow-hidden'>
+		<div className='relative w-full py-12 md:py-24 bg-[#BC4B3E] text-white overflow-hidden'>
 			{/* Add animation styles */}
 			<style jsx global>{floatingAnimation}</style>
 
-			<div className='max-w-7xl mx-auto px-6 relative z-10'>
-				{/* Chat messages */}
-				<div className="absolute left-0 -top-10 max-w-[200px] float-1">
-					<div className="bg-white text-[#1e1b4b] px-4 py-3 rounded-2xl font-medium shadow-md mb-2 relative">
-						Dzień dobry
-						<span className="block text-sm text-gray-500">Добрый день</span>
-						<div className="absolute -bottom-2 left-4 w-4 h-4 bg-white transform rotate-45"></div>
-					</div>
-				</div>
+			<div className='max-w-7xl mx-auto px-4 sm:px-6 relative z-0'>
+				{/* Chat messages - visible on all screens with responsive positioning */}
 				
-				<div className="absolute right-0 -top-5 max-w-[200px] float-2">
-					<div className="bg-white text-[#1e1b4b] px-4 py-3 rounded-2xl font-medium shadow-md mb-2 relative">
+				<div className="absolute right-4 sm:right-12 md:right-1 top-0 md:-top-5 max-w-[150px] md:max-w-[200px] float-2 z-10">
+					<div className="bg-white text-[#1e1b4b] px-3 py-2 md:px-4 md:py-3 rounded-2xl font-medium shadow-md mb-2 relative">
 						Karta Polaka
-						<span className="block text-sm text-gray-500">Карта Поляка</span>
+						<span className="block text-xs md:text-sm text-gray-500">Карта Поляка</span>
 						<div className="absolute -bottom-2 right-4 w-4 h-4 bg-white transform rotate-45"></div>
 					</div>
 				</div>
 				
-				<div className="absolute left-0 bottom-0 max-w-[200px] float-3">
-					<div className="bg-white text-[#1e1b4b] px-4 py-3 rounded-2xl font-medium shadow-md mb-2 relative">
+				{/* Fixed positioning for the bottom bubble - using only bottom positioning */}
+				<div className="absolute left-10 sm:left-12 md:left-304 bottom-200 md:bottom-0 max-w-[150px] md:max-w-[200px] float-3 z-10">
+					<div className="bg-white text-[#1e1b4b] px-3 py-2 md:px-4 md:py-3 rounded-2xl font-medium shadow-md mb-2 relative">
 						Nauka słów
-						<span className="block text-sm text-gray-500">Изучение слов</span>
+						<span className="block text-xs md:text-sm text-gray-500">Изучение слов</span>
 						<div className="absolute -bottom-2 left-4 w-4 h-4 bg-white transform rotate-45"></div>
 					</div>
 				</div>
 
-				{/* Main content */}
-				<div className="text-center">
+				{/* Main content with increased top padding to avoid overlap */}
+				<div className="text-center pt-20 md:pt-0 relative z-0">
 					{/* Title with typing effect - fixed height container */}
-					<div className="h-[200px] flex items-center justify-center">
+					<div className="h-[150px] md:h-[200px] flex items-center justify-center">
 						<ClientOnly>
-							<h1 className='text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight flex flex-col'>
+							<h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight flex flex-col'>
 								<span className="inline-block text-center">Изучай польский с помощью</span>
-								<span className="inline-block text-center mt-4">{displayText.substring(baseHeadline.length) || " "}|</span>
+								<span className="inline-block text-center mt-2 md:mt-4">{displayText.substring(baseHeadline.length) || " "}|</span>
 							</h1>
 						</ClientOnly>
 					</div>
 
 					{/* Subtitle */}
-					<p className='text-xl sm:text-2xl mb-12 max-w-3xl mx-auto text-gray-300'>
+					<p className='text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto text-white px-4'>
 						Готовьтесь к Карте Поляка эффективно: интерактивные тренировки, языковые тесты и умные напоминания
 					</p>
 
 					{/* Button */}
 					<div className='flex justify-center'>
-						<Button asChild size="lg" className='bg-white text-black rounded-full px-8 py-6 text-lg font-medium'>
+						<Button asChild size="lg" className='bg-white text-black rounded-full px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-medium'>
 							<Link href='https://t.me/wordich_bot'>
 								Начать бесплатно
 							</Link>
