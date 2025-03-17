@@ -49,7 +49,7 @@ const Hero = () => {
 		}, typingSpeed)
 		
 		return () => clearTimeout(timer)
-	}, [displayText, isDeleting, wordIndex])
+	}, [displayText, isDeleting, wordIndex, changingWords, typingSpeed, baseHeadline])
 
 	return (
 		<div className='relative w-full py-24 bg-[#BC4B3E] text-white overflow-hidden'>

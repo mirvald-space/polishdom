@@ -13,13 +13,14 @@ const CTA = () => {
 			</div>
 			
 			{/* Speech bubble */}
-			<div className="absolute top-20 right-1/4">
+			
+			
+			<div className="max-w-4xl mx-auto text-center">
+			<div className="w-fit top-20">
 				<div className="bg-indigo-500 text-white px-6 py-3 rounded-full text-lg font-medium">
 					To jest wspaniałe!
 				</div>
 			</div>
-			
-			<div className="max-w-4xl mx-auto text-center relative z-10">
 				<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
 				Новые слова каждый день
 				</h2>
@@ -30,7 +31,7 @@ const CTA = () => {
 				</p>
 				
 				<div className="mt-12">
-					<Button asChild size="lg" className="bg-white hover:bg-indigo-600 text-white rounded-full px-8 py-6 text-lg font-medium">
+					<Button asChild size="lg" className="bg-white text-black rounded-full px-8 py-6 text-lg font-medium">
 						<Link href="https://t.me/polishbot">
 							Хочу попробовать
 						</Link>

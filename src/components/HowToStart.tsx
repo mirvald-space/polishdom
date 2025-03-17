@@ -4,16 +4,25 @@ import { useState, useEffect } from 'react'
 const HowToStart = () => {
 	// Состояния для анимаций
 	const [typingText, setTypingText] = useState("");
-	const [showFullBotName, setShowFullBotName] = useState(false);
 	const [playingAudio, setPlayingAudio] = useState(true);
+	const [audioBarStyles, setAudioBarStyles] = useState<Array<{height: number, duration: number}>>([]);
 	
 	// Состояния для анимации чата в первом блоке
-	const userFullMessage = "Привет! Я хочу подготовиться к экзамену на Карту поляка. Мой уровень польского базовый.";
+	const userFullMessage = "Привет! Хочу проверить свой уровень и мне нужен четкий план обучения.";
 	const [typingUserMessage, setTypingUserMessage] = useState("");
 	const [userMessageMoved, setUserMessageMoved] = useState(false);
 	const [showBotResponse, setShowBotResponse] = useState(false);
 	
 	const fullText = "тренажер на карту поляка";
+	
+	// Initialize random audio bar styles on client-side only
+	useEffect(() => {
+		const styles = Array(30).fill(0).map(() => ({
+			height: Math.floor(Math.random() * 24) + 4,
+			duration: 0.7 + Math.random() * 1.2
+		}));
+		setAudioBarStyles(styles);
+	}, []);
 	
 	// Анимация печатающегося текста
 	useEffect(() => {
@@ -26,7 +35,7 @@ const HowToStart = () => {
 		} else {
 			// Когда текст напечатан, показываем полное название бота
 			const nameTimer = setTimeout(() => {
-				setShowFullBotName(true);
+				// No action needed here
 			}, 500);
 			
 			return () => clearTimeout(nameTimer);
@@ -130,7 +139,7 @@ const HowToStart = () => {
 						<div className="bg-gray-50 rounded-3xl p-6 mb-6 relative min-h-80 max-h-96 overflow-auto">
 							<div className="flex flex-col space-y-4">
 								{/* Сообщение пользователя - сначала печатающееся, потом перемещающееся вверх */}
-								<div className={`flex justify-end transition-all duration-700 ${userMessageMoved ? 'transform -translate-y-24 opacity-70 scale-95' : 'transform translate-y-8'}`}>
+								<div className={`flex justify-end transition-all duration-700 ${userMessageMoved ? 'transform -translate-y-0 opacity-70 scale-95' : 'transform translate-y-8'}`}>
 									<div className="bg-blue-100 rounded-2xl py-3 px-4 max-w-[80%]">
 										<p className="text-gray-800">
 											{typingUserMessage}
@@ -145,41 +154,41 @@ const HowToStart = () => {
 										<span className="text-white text-xs font-bold">AI</span>
 									</div>
 									<div className="bg-white rounded-2xl p-4 shadow-sm max-w-[80%]">
-										<p className="text-lg font-bold mb-2">
+										<p className="text-sm font-bold mb-2">
 											Ваш уровень: Beginner (A1)
 										</p>
-										<p className="text-gray-700 mb-3">
-											План обучения на 8 недель:
+										<p className="text-gray-700 text-sm mb-3">
+											План обучения на месяц:
 										</p>
 										<ul className="space-y-2 text-sm text-gray-600">
-											<li>• Неделя 1-2: Базовая грамматика и лексика</li>
-											<li>• Неделя 3-4: Основы польской истории</li>
-											<li>• Неделя 5-6: Культура и традиции</li>
-											<li>• Неделя 7-8: Практика разговора и подготовка к интервью</li>
+											<li>Неделя 1: Базовая грамматика и лексика</li>
+											<li>Неделя 2: Основы польской истории</li>
+											<li>Неделя 3: Культура и традиции</li>
+											<li>Неделя 4: Практика разговора и подготовка к интервью</li>
 										</ul>
-										<p className="text-sm text-gray-500 mt-3">
-											Ежедневно: 10 новых слов + 2 практических упражнения
+										<p className="text-sm font-bold text-gray-500 mt-3">
+											Ежедневно: новые слова с нашим ботом + 2 практических упражнения
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
 						
-						<h3 className="text-3xl font-bold text-center mb-3">
+						<h3 className="text-2xl font-bold text-center mb-3">
 							Тестирование<br/>уровня владения языком
 						</h3>
 						<p className="text-center text-gray-500 mb-4">
-							Бот определит ваш текущий<br/>уровень владения польским языком и составит<br/>персональный план обучения
+							Бот определит ваш текущий уровень владения польским языком и составит<br/>персональный план обучения
 						</p>
 					</div>
 
 					{/* Третий блок: Напоминания и изучение слов */}
 					<div className="bg-white rounded-3xl p-4 shadow-sm flex flex-col">
-						<div className="bg-white p-6 mb-2 min-h-80 overflow-auto">
+						<div className="bg-white p-4 mb-2 min-h-80 overflow-auto">
 							{/* Аудио блок */}
 							<div className="flex items-center mb-6">
 								<button 
-									className="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mr-4"
+									className="w-16 h-16 bg-red-400 rounded-full flex items-center justify-center mr-4"
 									onClick={() => setPlayingAudio(!playingAudio)}
 								>
 									<svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -188,54 +197,67 @@ const HowToStart = () => {
 								</button>
 								<div className="w-full">
 									<div className="mb-1">
-										<span className="text-gray-500 text-sm font-medium">00:04</span>
+										<span className="text-gray-500 text-sm font-medium">00:12</span>
 									</div>
 									<div className="w-full h-8 flex items-end space-x-0.5">
-										{Array(30).fill(0).map((_, i) => (
-											<div 
-												key={i} 
-												className="audio-wave-bar"
-												style={{
-													height: `${Math.floor(Math.random() * 24) + 4}px`,
-													backgroundColor: '#3B82F6',
-													width: '2px',
-													borderRadius: '1px',
-													animationDelay: `${i * 0.1}s`,
-													animationDuration: `${0.7 + Math.random() * 1.2}s`
-												}}
-											></div>
-										))}
+										{audioBarStyles.length > 0 ? (
+											audioBarStyles.map((style, i) => {
+												return (
+													<div 
+														key={i} 
+														className="audio-wave-bar"
+														style={{
+															height: `${style.height}px`,
+															backgroundColor: '#3B82F6',
+															width: '2px',
+															borderRadius: '1px',
+															animationDelay: `${i * 0.1}s`,
+															animationDuration: `${style.duration}s`
+														}}
+													></div>
+												);
+											})
+										) : (
+											// Fallback for server rendering
+											Array(30).fill(0).map((_, i) => (
+												<div 
+													key={i} 
+													className="audio-wave-bar"
+													style={{
+														height: '12px',
+														backgroundColor: '#3B82F6',
+														width: '2px',
+														borderRadius: '1px',
+														animationDelay: `${i * 0.1}s`,
+														animationDuration: '1s'
+													}}
+												></div>
+											))
+										)}
 									</div>
 								</div>
 							</div>
 							
 							{/* Польское слово с примером */}
 							<div>
-								<h4 className="text-xl font-bold mb-3">Слово дня:</h4>
+								<h4 className="text-md font-bold mb-3">Слово дня:</h4>
 								<div className="mb-2">
-									<p className="text-2xl font-bold mb-4">konstytucja – конституция</p>
-									<div className="bg-blue-50 p-5 border-l-4 border-blue-400 rounded">
+									<p className="text-xl font-bold mb-4">konstytucja – конституция</p>
+									<div className="bg-red-50 p-5 border-l-4 border-red-400 rounded">
 										<p className="text-gray-800 mb-2">Konstytucja 3 maja była pierwszą konstytucją w Europie</p>
 										<p className="text-gray-600">Конституция 3 мая была первой конституцией в Европе</p>
 									</div>
 								</div>
 							</div>
 							
-							{/* Настройки времени уведомлений */}
-							<div className="bg-gray-50 rounded-lg p-3 mt-4">
-								<p className="text-sm text-gray-700 font-medium">Время уведомлений: 10:00</p>
-								<div className="w-full bg-gray-200 rounded-full h-2 mt-2">
-									<div className="bg-blue-400 rounded-full h-2 w-[13%]"></div>
-								</div>
-								<p className="text-xs text-gray-500 mt-1">Выберите удобное время с 9:00 до 21:00</p>
-							</div>
+
 						</div>
 						
 						<h3 className="text-3xl font-bold text-center mb-3">
-							Система<br/>уведомлений
+						Учите новые слова
 						</h3>
 						<p className="text-center text-gray-500 mb-4">
-							Настройте удобное время получения<br/>ежедневных слов по выбранным темам<br/>в период с 9:00 до 21:00
+						Бот будет присылать новые слова каждый день и помогать запоминать.
 						</p>
 					</div>
 				</div>
