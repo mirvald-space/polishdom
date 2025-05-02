@@ -55,7 +55,28 @@ export const Hero: React.FC = () => {
         </div>
 
         <div className="bg-[rgba(255,255,255,0.05)] flex w-full flex-col items-stretch text-sm font-normal leading-5 p-[18px] rounded-[18px] border-[rgba(255,255,255,0.05)] border-solid border-2 max-md:max-w-full mt-0.5">
-          <div className="flex min-h-6 gap-1" />
+          <div className="flex min-h-6 gap-1">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <svg
+                key={star}
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-yellow-400"
+              >
+                <path
+                  d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            ))}
+          </div>
           <div className="mt-2 max-md:max-w-full">
             " Екатерина прекрасный преподаватель! Объясняет понятно,
             поддерживает и мотивирует. Уроки проходят легко и интересно, и
