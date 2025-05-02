@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 
 interface CTASectionProps {
   title: React.ReactNode;
