@@ -26,7 +26,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
           <p className="self-stretch text-white text-sm font-normal leading-6 mt-2 max-md:max-w-full">
             {description}
           </p>
-          <Button variant="white" className="self-stretch mt-2">
+          <Button variant="secondary" className="self-stretch mt-2">
             {buttonText}
           </Button>
         </div>
@@ -51,7 +51,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
           {description}
         </p>
       </div>
-      <Button variant="white" className="self-stretch my-auto">
+      <Button variant="secondary" className="self-stretch my-auto">
         {buttonText}
       </Button>
     </section>
