@@ -3,9 +3,9 @@ import { Button } from "../ui/Button";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="bg-[rgba(24,45,14,1)] flex w-full overflow-hidden text-white justify-between flex-wrap px-[220px] py-10 max-md:max-w-full max-md:px-5">
+    <section className="bg-[rgba(24,45,14,1)] flex w-full overflow-hidden text-white justify-between flex-wrap px-[220px] py-10 max-md:max-w-full max-md:px-5 min-h-[500px] items-center">
       <div className="flex min-w-60 flex-col items-stretch text-sm font-bold leading-6 flex-1 shrink basis-[0%] max-md:max-w-full">
-        <h1 className="text-[50px] leading-[56px] uppercase max-md:max-w-full max-md:text-[40px] max-md:leading-[50px]">
+        <h1 className="font-playfair text-[50px] leading-[56px] uppercase max-md:max-w-full max-md:text-[40px] max-md:leading-[50px]">
           Польский
           <br />
           для всех целей
