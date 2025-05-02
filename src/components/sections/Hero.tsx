@@ -3,14 +3,14 @@ import { Button } from "../ui/Button";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="bg-[rgba(24,45,14,1)] flex w-full overflow-hidden text-white justify-between flex-wrap px-[220px] py-10 max-md:max-w-full max-md:px-5 min-h-[500px] items-center">
+    <section className="bg-[rgba(24,45,14,1)] flex w-full overflow-hidden text-white justify-between flex-wrap px-[220px] py-10 max-md:max-w-full max-md:px-5 min-h-[500px] items-center gap-10">
       <div className="flex min-w-60 flex-col items-stretch text-sm font-bold leading-6 flex-1 shrink basis-[0%] max-md:max-w-full">
         <h1 className="font-playfair text-[50px] leading-[56px] uppercase max-md:max-w-full max-md:text-[40px] max-md:leading-[50px]">
           Польский
-          <br />
+          <br />  
           для всех целей
         </h1>
-        <p className="font-normal mt-4 max-md:max-w-full">
+        <p className="font-normal mt-4 max-md:max-w-full text-xl">
           6 лет успешного опыта подготовки к Карте поляка и экзаменам.
           <br />
           Индивидуальный подход к каждому ученику, от начинающих до продвинутого
