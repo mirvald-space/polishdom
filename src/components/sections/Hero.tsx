@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
             alt="Teacher"
             className="aspect-[1] object-contain w-[200px] min-h-[200px] shrink-0 rounded-[18px]"
           />
-          <div className="min-w-60 flex-1 shrink basis-[0%]">
+          <div className="min-w-70 flex-1 ">
             <div className="flex w-full items-stretch gap-0.5">
               <div className="bg-[rgba(255,255,255,0.05)] border flex gap-3 h-full flex-1 shrink basis-[0%] p-[18px] rounded-[18px] border-[rgba(255,255,255,0.1)] border-solid">
                 <div className="w-full flex-1 shrink basis-[0%]">
@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[rgba(255,255,255,0.05)] border flex w-full gap-3 flex-1 h-full p-[18px] rounded-[18px] border-[rgba(255,255,255,0.1)] border-solid">
+            <div className="bg-[rgba(255,255,255,0.05)] border flex w-full gap-3 flex-1 h-fit p-[18px] rounded-[18px] border-[rgba(255,255,255,0.1)] border-solid">
               <div className="min-w-60 w-full flex-1 shrink basis-[0%]">
                 <div className="text-lg font-bold leading-none">2799+</div>
                 <div className="text-base font-normal mt-1">Провела уроков</div>
