@@ -1,22 +1,22 @@
-# Welcome to your Lovable project
+# Welcome to your UI Canvas project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/07d4de4f-389a-4db8-bd8c-334f93343db1
+**URL**: https://ui-canvas-build.com
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Use UI Canvas**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/07d4de4f-389a-4db8-bd8c-334f93343db1) and start prompting.
+Simply visit the project URL and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+Changes made via UI Canvas will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in the UI.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +62,12 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/07d4de4f-389a-4db8-bd8c-334f93343db1) and click on Share -> Publish.
+Simply open the project in UI Canvas and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+## Can I connect a custom domain to my project?
 
 Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Read more here: [Setting up a custom domain](https://docs.ui-canvas.com/tips-tricks/custom-domain#step-by-step-guide)
