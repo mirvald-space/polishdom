@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
           Индивидуальный подход к каждому ученику, от начинающих до продвинутого
           уровня.
         </p>
-        <Button className="mt-4 self-start">Консультация (30 мин)</Button>
+        <Button className="mt-4 self-start uppercase">Консультация (30 мин)</Button>
       </div>
 
       <div className="flex min-w-60 flex-col items-stretch justify-center flex-1 shrink basis-[0%] max-md:max-w-full">
