@@ -1,4 +1,57 @@
-# Welcome to your UI Canvas project
+# Сайт репетитора польского языка
+
+Персональный сайт для преподавателя польского языка, который помогает привлекать новых учеников и организовывать учебный процесс.
+
+## Функциональность
+
+- Представление преподавателя и его квалификации
+- Описание курсов и услуг
+- Информация о методиках обучения
+- Форма обратной связи для потенциальных учеников
+- Блог с полезными материалами по изучению польского языка
+- Адаптивный дизайн для всех устройств
+
+## Технологии
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## Локальная разработка
+
+```sh
+# Клонирование репозитория
+git clone <URL_РЕПОЗИТОРИЯ>
+
+# Переход в директорию проекта
+cd polishdom
+
+# Установка зависимостей
+npm install
+
+# Запуск сервера разработки
+npm run dev
+```
+
+## Структура проекта
+
+- `public/` - статические файлы
+- `src/` - исходный код приложения
+  - `components/` - компоненты React
+  - `hooks/` - пользовательские хуки React
+  - `lib/` - вспомогательные функции
+  - `pages/` - страницы сайта
+
+## Деплой
+
+Проект можно развернуть на любой платформе, поддерживающей статический хостинг: Vercel, Netlify, GitHub Pages и т.д.
+
+```sh
+# Сборка проекта
+npm run build
+```
 
 ## Project info
 
@@ -49,16 +102,6 @@ npm run dev
 - Select the "Codespaces" tab.
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
 ## How can I deploy this project?
 
