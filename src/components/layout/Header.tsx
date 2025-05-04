@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
       <div className="flex gap-[7px] overflow-hidden font-bold whitespace-nowrap z-10">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/09ecf6ed7ff4d307fd9d9778d1b1617bff7f338d?placeholderIfAbsent=true"
-          alt="PolishdDom Logo"
+          alt="Логотип PolishDom - школа польского языка"
           className="aspect-[1] object-contain w-[26px] min-h-[26px] shrink-0 rounded-[56px]"
         />
         <div>PolishdDom</div>

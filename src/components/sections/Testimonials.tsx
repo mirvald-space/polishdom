@@ -16,14 +16,14 @@ export const Testimonials: React.FC = () => {
           <button className="rotate-[3.141592653589793rad] bg-white self-stretch flex items-center gap-3 w-[68px] my-auto px-6 py-3 rounded-[18px] max-md:px-5">
             <img
               src="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/3a0b3c3b16979adbf75a0cd57a5ad9dc4f039e8b?placeholderIfAbsent=true"
-              alt="Previous"
+              alt="Предыдущий отзыв ученика о курсах польского языка"
               className="aspect-[1] object-contain w-5 self-stretch my-auto"
             />
           </button>
           <button className="bg-white self-stretch flex items-center gap-3 w-[68px] my-auto px-6 py-3 rounded-[18px] max-md:px-5">
             <img
               src="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/25b29b70ee98170d18c88124375e2e926583f898?placeholderIfAbsent=true"
-              alt="Next"
+              alt="Следующий отзыв ученика о курсах польского языка"
               className="aspect-[1] object-contain w-5 self-stretch my-auto"
             />
           </button>

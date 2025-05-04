@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 export const Footer: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
         <div className="flex gap-[7px] overflow-hidden font-bold whitespace-nowrap leading-6">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/d305ad212f8e932084c56ead563859e6de3d63e6?placeholderIfAbsent=true"
-            alt="PolishdDom Logo"
+            alt="Логотип PolishDom - курсы польского языка онлайн"
             className="aspect-[0.96] object-contain w-[26px] min-h-[26px] shrink-0 rounded-[56px]"
           />
           <div>PolishdDom</div>

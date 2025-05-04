@@ -15,7 +15,7 @@ export const Features: React.FC = () => {
         <div className="bg-white border min-w-60 text-sm text-[rgba(59,56,40,1)] font-normal leading-5 flex-1 shrink basis-[0%] p-[18px] rounded-[18px] border-[rgba(59,56,40,0.1)] border-solid max-md:max-w-full">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/5068f6ee64eb0679c57ea1d16f4f660fc779448a?placeholderIfAbsent=true"
-            alt="Teacher"
+            alt="Катя - репетитор польского языка с индивидуальным подходом к обучению"
             className="aspect-[0.96] object-contain w-24"
           />
           <div className="w-full mt-3 max-md:max-w-full">

@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
         <div className="flex w-full items-stretch gap-0.5 flex-wrap max-md:max-w-full">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/423adc84d53e55d95e66ea70af513256ff2f8bba?placeholderIfAbsent=true"
-            alt="Teacher"
+            alt="Преподаватель польского языка с 6-летним опытом подготовки к Карте поляка и экзаменам"
             className="aspect-[1] object-contain w-[200px] min-h-[200px] shrink-0 rounded-[18px]"
           />
           <div className="min-w-70 flex-1 ">

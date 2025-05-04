@@ -8,6 +8,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { CTASection } from "@/components/sections/CTASection";
 import { FreeResources } from "@/components/sections/FreeResources";
 import { MarqueeText } from "@/components/ui/MarqueeText";
+import { SEO } from "@/components/layout/SEO";
 
 const marqueeItems = [
   { text: "Для взрослых" },
@@ -37,8 +38,41 @@ const marqueeItems = [
 ];
 
 const Index: React.FC = () => {
+  // Структурированные данные Schema.org для локального бизнеса
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PolishDom",
+    "description": "Уроки польского языка для детей и взрослых. Подготовка к Карте поляка, экзаменам, сертификации.",
+    "image": "/og-image.jpg",
+    "email": "polishdom.info@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Польша"
+    },
+    "priceRange": "$$",
+    "sameAs": [
+      "https://facebook.com/polishdom",
+      "https://instagram.com/polishdom"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  };
+
   return (
     <div className="bg-[rgba(235,240,231,1)] overflow-hidden">
+      <SEO 
+        title="PolishDom - Изучение польского языка | Карта поляка | Сертификаты"
+        description="Уроки польского языка для детей и взрослых. Подготовка к Карте поляка, экзаменам, сертификации. 6 лет опыта в обучении польскому языку."
+        schema={schemaData}
+      />
+      
       <Header />
 
       <main>

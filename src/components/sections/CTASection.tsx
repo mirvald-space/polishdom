@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 interface CTASectionProps {
   title: React.ReactNode;
@@ -33,7 +33,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
         {image && (
           <img
             src={image}
-            alt="Guide"
+            alt="Гайд по изучению польского языка - эффективные методики и советы"
             className="aspect-[0.83] object-contain w-32 shrink-0"
           />
         )}
