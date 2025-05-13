@@ -77,7 +77,7 @@ export const Header: React.FC = () => {
           <a 
             href="#testimonials" 
             className="py-3 text-center bg-white hover:bg-gray-50 transition-all duration-200 rounded-[20px] mb-2 flex items-center justify-center font-medium"
-            onClick={(e) => handleNavLinkClick(e, 'studentResults')}
+            onClick={(e) => handleNavLinkClick(e, 'testimonials')}
           >
             Отзывы
           </a>

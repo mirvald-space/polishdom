@@ -56,7 +56,7 @@ export const StudentResults: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-white p-5 rounded-[20px]">
+    <section id="testimonials" className="w-full bg-white p-5 rounded-[20px]">
       <h2 className="text-2xl font-bold uppercase mb-6">
         РЕЗУЛЬТАТЫ МОИХ УЧЕНИКОВ
       </h2>
