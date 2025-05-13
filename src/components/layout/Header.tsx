@@ -7,30 +7,49 @@ export const Header: React.FC = () => {
 
   return (
     <header className="w-full text-sm bg-white leading-6 p-5 rounded-[20px]">
-
-        <div className="flex gap-[7px] overflow-hidden font-bold whitespace-nowrap z-10">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/09ecf6ed7ff4d307fd9d9778d1b1617bff7f338d?placeholderIfAbsent=true"
-            alt="Логотип PolishDom - школа польского языка"
-            className="aspect-[1] object-contain w-[26px] min-h-[26px] shrink-0 rounded-[56px]"
-          />
-          <div>PolishdDom</div>
+      {/* Overlay с эффектом размытия */}
+      <div 
+        className={`fixed inset-0 bg-black/5 backdrop-blur-sm transition-all duration-300 z-10 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+      
+      <Container>
+        <div className="flex justify-between items-center">
+          <div className="flex gap-[7px] overflow-hidden font-bold whitespace-nowrap z-20">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/09ecf6ed7ff4d307fd9d9778d1b1617bff7f338d?placeholderIfAbsent=true"
+              alt="Логотип PolishDom - школа польского языка"
+              className="aspect-[1] object-contain w-[26px] min-h-[26px] shrink-0 rounded-[56px]"
+            />
+            <div>PolishdDom</div>
+          </div>
+          
+          {/* Кнопка меню для всех разрешений */}
+          <button 
+            className="font-medium text-[rgba(59,56,40,1)] z-20 hover:text-gray-700 transition-colors px-3 py-1 border border-transparent hover:border-gray-200 rounded-md"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            Меню
+          </button>
         </div>
-        
-        {/* Мобильная кнопка меню */}
-        <button 
-          className="hidden max-md:flex flex-col justify-center items-center w-8 h-8 z-10"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span className={`block w-6 h-0.5 bg-[rgba(59,56,40,1)] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-[rgba(59,56,40,1)] my-1 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-          <span className={`block w-6 h-0.5 bg-[rgba(59,56,40,1)] transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-        </button>
+      </Container>
 
-
-      {/* Мобильное меню */}
-      <nav className={`hidden max-md:flex flex-col w-full bg-white py-5 absolute top-[60px] left-0 shadow-md transition-all duration-300 z-20 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10 pointer-events-none'}`}>
+      {/* Выпадающее меню для всех разрешений */}
+      <nav className={`flex flex-col w-full bg-white absolute left-1/2 -translate-x-1/2 shadow-md transition-all duration-300 z-20 max-w-[462px] py-3 ${mobileMenuOpen ? 'opacity-100 translate-y-0 top-[20px] rounded-[20px]' : 'opacity-0 -translate-y-10 pointer-events-none top-[60px]'}`}>
         <Container>
+          <div className="flex justify-between items-center mb-4">
+            <div className="font-medium">Навигация</div>
+            <button 
+              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          
           <Link 
             to="#about" 
             className="py-3 hover:bg-gray-100 transition-colors"
