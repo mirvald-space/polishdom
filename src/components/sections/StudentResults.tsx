@@ -62,11 +62,11 @@ export const StudentResults: React.FC = () => {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
-        <div className="bg-[#FAFAFA] p-5 rounded-lg flex flex-col items-center justify-center">
+        <div className="bg-[#FAFAFA] p-5 rounded-[20px] flex flex-col items-center justify-center">
           <div className="text-[24px] leading-[32px] font-bold mb-2">10+</div>
           <div className="text-center">получили карту поляка</div>
         </div>
-        <div className="bg-[#FAFAFA] p-5 rounded-lg flex flex-col items-center justify-center">
+        <div className="bg-[#FAFAFA] p-5 rounded-[20px] flex flex-col items-center justify-center">
           <div className="text-[24px] leading-[32px] font-bold mb-2">100%</div>
           <div className="text-center">успешно сдали экзамены</div>
         </div>
