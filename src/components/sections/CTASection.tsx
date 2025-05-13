@@ -5,7 +5,7 @@ interface CTASectionProps {
   title: React.ReactNode;
   description: string;
   buttonText: string;
-  variant?: "default" | "test" | "guide" | "telegram";
+  variant?: "default" | "test" | "guide" | "bot" | "channel";
   image?: string;
   linkTo?: string;
   isExternal?: boolean;
@@ -125,7 +125,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
     );
   }
 
-  if (variant === "telegram") {
+  if (variant === "bot") {
     return (
       <section className="flex flex-col p-5 bg-[#51b4e8] w-full rounded-[20px]">
         <div className="flex flex-row items-center">
@@ -133,7 +133,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
             <div className="mr-5">
               <img
                 src={image}
-                alt="Telegram канал с упражнениями по польскому языку"
+                alt="ПОДГОТОВКА К СОБЕСЕДОВАНИЮ НА КАРТУ ПОЛЯКА"
                 className="w-24 h-24 object-contain"
               />
             </div>

@@ -96,40 +96,42 @@ const Index: React.FC = () => {
             title="Подготовка к собеседованию на Карту поляка"
             description="Тренируйтесь отвечать на вопросы консула с помощью моего AI-бота. Симуляция реального собеседования поможет чувствовать себя увереннее и повысит ваши шансы на успех."
             buttonText="Перейти к боту"
-            variant="telegram"
+            variant="bot"
             image="/consul.png"
             linkTo="https://t.me/polishdom_bot"
             isExternal={true}
             blank={true}
           />
-          <Services />
-          <FAQ />
+          <StudentResults />
           <CTASection
             title="ЕЖЕДНЕВНЫЕ УПРАЖНЕНИЯ И СОВЕТЫ В TELEGRAM"
             description="Изучайте польский язык и культуру с моими материалами в Telegram"
             buttonText="ПОДПИСАТЬСЯ НА КАНАЛ"
-            variant="telegram"
+            variant="channel"
             image="/bell.png"
             linkTo="https://t.me/polishdom"
             isExternal={true}
             blank={true}
           />
-          <StudentResults />
-          
-          <CTASection
+          <Services />
+          {/* <CTASection
             title="15 СЕКРЕТОВ БЫСТРОГО ИЗУЧЕНИЯ ПОЛЬСКОГО"
             description="Я составила для вас подробный гайд, который повысит эффективность вашего обучения на 97%. Узнайте проверенные методики и секреты быстрого освоения польского языка."
             buttonText="ПОЛУЧИТЬ ЗА 0,99 ЗЛОТЫЙ (PDF)"
             variant="guide"
             image="/pdf.png"
             linkTo="/guide"
-          />
+          /> */}
+          <FAQ />
           <CTASection
             title="НАЧНИТЕ ГОВОРИТЬ ПО-ПОЛЬСКИ УЖЕ ЧЕРЕЗ 1 МЕСЯЦ"
             description="На бесплатном пробном занятии: Определите свой текущий уровень, Получите персональный план обучения, Узнаете точные сроки достижения B1 и B2"
             buttonText="ЗАПИСАТЬСЯ НА БЕСПЛАТНОЕ ЗАНЯТИЕ"
             variant="guide"
             image="/pdf.png"
+            linkTo="https://t.me/+uWJA2uwCffE5YmU8"
+            isExternal={true}
+            blank={true}
           />
           
           <Footer />
