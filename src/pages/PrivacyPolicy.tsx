@@ -25,7 +25,7 @@ const PrivacyPolicy: React.FC = () => {
         <Container>
           <Header />
           
-          <section className="bg-white rounded-[20px] max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+          <section className="bg-white rounded-[20px] max-w-4xl mx-auto p-5">
             <h1 className="text-3xl font-bold mb-6">Политика конфиденциальности</h1>
             
             <div className="prose prose-lg">
