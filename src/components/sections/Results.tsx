@@ -2,7 +2,7 @@ import React from "react";
 
 export const Results: React.FC = () => {
   return (
-    <section className="flex flex-col gap-5 w-full bg-[#0F3516] text-white p-5 max-md:max-w-full rounded-[20px]">
+    <section id="results" className="flex flex-col gap-5 w-full bg-[#0F3516] text-white p-5 max-md:max-w-full rounded-[20px]">
       <h2 className="text-[24px] leading-[32px] font-bold uppercase max-md:max-w-full">
         МОИ РЕЗУЛЬТАТЫ ЗА 6+ ЛЕТ ОБУЧЕНИЯ:
       </h2>
