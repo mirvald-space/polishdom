@@ -12,6 +12,15 @@ export const Header: React.FC = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Если элемент не найден, прокручиваем к соответствующему разделу по селектору
+      const section = document.querySelector(`.${id}`);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Если ничего не найдено, прокручиваем в начало
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
   };
 
@@ -45,39 +54,39 @@ export const Header: React.FC = () => {
       {/* Выпадающее меню для всех разрешений */}
       <nav className={`flex flex-col p-5 w-full bg-white absolute left-1/2 -translate-x-1/2 shadow-md transition-all duration-300 z-20 max-w-[462px] py-3 ${mobileMenuOpen ? 'opacity-100 translate-y-0 top-[20px] rounded-[20px]' : 'opacity-0 -translate-y-10 pointer-events-none top-[60px]'}`}>
           <a 
-            href="#about" 
+            href="#methodology" 
             className="py-3 text-center bg-white hover:bg-gray-50 transition-all duration-200 rounded-[20px] mb-2 flex items-center justify-center font-medium"
-            onClick={(e) => handleNavLinkClick(e, 'about')}
+            onClick={(e) => handleNavLinkClick(e, 'methodology')}
           >
-            Обо мне
-          </a>
-          <a 
-            href="#how-it-works" 
-            className="py-3 text-center bg-white hover:bg-gray-50 transition-all duration-200 rounded-[20px] mb-2 flex items-center justify-center font-medium"
-            onClick={(e) => handleNavLinkClick(e, 'how-it-works')}
-          >
-            Как проходят занятия
+            Методология
           </a>
           <a 
             href="#services" 
             className="py-3 text-center bg-white hover:bg-gray-50 transition-all duration-200 rounded-[20px] mb-2 flex items-center justify-center font-medium"
             onClick={(e) => handleNavLinkClick(e, 'services')}
           >
-            Виды обучения
+            Услуги
+          </a>
+          <a 
+            href="#results" 
+            className="py-3 text-center bg-white hover:bg-gray-50 transition-all duration-200 rounded-[20px] mb-2 flex items-center justify-center font-medium"
+            onClick={(e) => handleNavLinkClick(e, 'results')}
+          >
+            Результаты
           </a>
           <a 
             href="#testimonials" 
             className="py-3 text-center bg-white hover:bg-gray-50 transition-all duration-200 rounded-[20px] mb-2 flex items-center justify-center font-medium"
-            onClick={(e) => handleNavLinkClick(e, 'testimonials')}
+            onClick={(e) => handleNavLinkClick(e, 'studentResults')}
           >
             Отзывы
           </a>
           <a 
-            href="#contacts" 
+            href="#faq" 
             className="py-3 text-center bg-white hover:bg-gray-50 transition-all duration-200 rounded-[20px] mb-2 flex items-center justify-center font-medium"
-            onClick={(e) => handleNavLinkClick(e, 'contacts')}
+            onClick={(e) => handleNavLinkClick(e, 'faq')}
           >
-            Контакты
+            FAQ
           </a>
           
           {/* Кнопка закрыть внизу */}

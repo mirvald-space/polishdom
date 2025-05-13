@@ -72,7 +72,7 @@ export const StudentResults: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-white border rounded-lg p-6 mb-5">
+      <div className="bg-white border rounded-lg p-6 mb-5 rounded-[20px]">
         <div className="flex items-center mb-4">
           {reviews[currentIndex].imageSrc ? (
             <div className="rounded-full overflow-hidden w-16 h-16 mr-4 flex-shrink-0">
