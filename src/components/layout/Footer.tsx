@@ -27,10 +27,10 @@ export const Footer: React.FC = () => {
           <div className="text-sm text-[rgba(59,56,40,1)] font-normal">
             <div className="text-[#3B3828] text-base font-bold">Документы</div>
             <div className="leading-none mt-3">
-              <Link to="#terms">Договор оферты</Link>
+              <Link to="/terms-of-service">Договор оферты</Link>
             </div>
             <div className="leading-5">
-              <Link to="#privacy">
+              <Link to="/privacy-policy">
                 Политика <br />
                 конфидециальности
               </Link>
