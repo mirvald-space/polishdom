@@ -120,7 +120,7 @@ const Index: React.FC = () => {
           <StudentResults />
           <CTASection
             title="ЕЖЕДНЕВНЫЕ УПРАЖНЕНИЯ И СОВЕТЫ В TELEGRAM"
-            description="Изучайте польский язык и культуру с моими материалами в Telegram"
+            description="Изучайте польский язык и культуру с моими ежедневными материалами в Telegram: практические упражнения, полезные фразы, культурные заметки и эксклюзивные советы для быстрого прогресса"
             buttonText="ПОДПИСАТЬСЯ НА КАНАЛ"
             bgColor="bg-white"
             textColor="text-black"
