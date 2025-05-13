@@ -14,6 +14,7 @@ interface CTASectionProps {
   blank?: boolean;
   imageAlt?: string;
   buttonClassName?: string;
+  onClick?: () => void;
 }
 
 export const CTASection: React.FC<CTASectionProps> = ({
@@ -28,6 +29,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
   blank = false,
   imageAlt = "Изображение",
   buttonClassName,
+  onClick,
 }) => {
   // Универсальный компонент кнопки
   const ActionButton = ({ className }: { className?: string }) => {
@@ -48,6 +50,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
       <Button 
         variant="default" 
         className={buttonClasses}
+        onClick={onClick}
       >
         {buttonText}
       </Button>

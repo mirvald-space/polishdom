@@ -71,6 +71,13 @@ const Index: React.FC = () => {
     }
   };
 
+  const scrollToResults = () => {
+    const resultsSection = document.getElementById('results');
+    if (resultsSection) {
+      resultsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="bg-[#E7E7E7] overflow-hidden">
       <SEO 
@@ -88,10 +95,10 @@ const Index: React.FC = () => {
             title="Выучить польский до уровня B2 возможно за 7-9 месяцев"
             description="Большинство студентов тратят более 2 лет на то, что можно освоить гораздо быстрее"
             buttonText="Узнать, как выучить польский быстрее"
-            image="/hero.png"
             bgColor="bg-[#CA4237]"
             textColor="text-white"
             buttonClassName="self-start uppercase bg-white text-black font-bold w-full hover:bg-white/80 hover:text-black"
+            onClick={scrollToResults}
           />
           <MarqueeText items={marqueeItems} />
           <Pain1 />
