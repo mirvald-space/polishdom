@@ -30,7 +30,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
   buttonClassName,
 }) => {
   // Универсальный компонент кнопки
-  const ActionButton = () => {
+  const ActionButton = ({ className }: { className?: string }) => {
     const defaultButtonClasses = "w-full rounded-[20px]";
     const buttonClasses = buttonClassName ? buttonClassName : defaultButtonClasses;
 
@@ -58,26 +58,28 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
   return (
     <section className={cn("flex flex-col p-5 w-full rounded-[20px] gap-5", bgColor)}>
-      <div className="flex flex-col md:flex-row items-center gap-4">
+      <div className="flex flex-col ">
         {image && (
-          <div className="md:w-1/3 flex justify-center">
+          <div className=" flex justify-center items-center gap-5">
             <img
               src={image}
               alt={imageAlt}
               className="w-32 md:w-40 object-contain"
             />
-          </div>
-        )}
-        <div className={cn("flex flex-col gap-4", image ? "md:w-2/3" : "w-full")}>
-          <h2 className={cn("text-[24px] leading-[32px] font-bold uppercase", textColor)}>
+            <h2 className={cn("text-[24px] leading-[32px] font-bold uppercase", textColor)}>
             {title}
           </h2>
+          </div>
+        )}
+        
+      </div>
+      <div className={cn("flex flex-col gap-4 w-full")}>
+          
           <p className={cn("text-[16px] leading-[24px] font-normal", textColor)}>
             {description}
           </p>
-          <ActionButton />
+          <ActionButton className="w-full" />
         </div>
-      </div>
     </section>
   );
 };
