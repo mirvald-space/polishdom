@@ -19,7 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'playfair': ['"Playfair Display"', 'serif'],
+				'sans': ['Overpass', 'sans-serif'],
+				'overpass': ['Overpass', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

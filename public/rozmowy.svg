@@ -1,0 +1,12 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Первый пузырь -->
+  <g transform="translate(20, 60)">
+    <ellipse cx="60" cy="40" rx="60" ry="40" fill="#8D9D78" />
+    <text x="60" y="45" font-family="Arial" font-size="18" fill="white" text-anchor="middle">Rozmowy</text>
+  </g>
+  
+  <!-- Второй пузырь -->
+  <g transform="translate(70, 20)">
+    <ellipse cx="50" cy="30" rx="50" ry="30" fill="#A9B794" />
+  </g>
+</svg> 

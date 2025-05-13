@@ -1,12 +1,15 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button, LinkButton } from "@/components/ui/button";
 
 interface CTASectionProps {
   title: React.ReactNode;
   description: string;
   buttonText: string;
-  variant?: "default" | "test" | "guide";
+  variant?: "default" | "test" | "guide" | "telegram";
   image?: string;
+  linkTo?: string;
+  isExternal?: boolean;
+  blank?: boolean;
 }
 
 export const CTASection: React.FC<CTASectionProps> = ({
@@ -15,45 +18,156 @@ export const CTASection: React.FC<CTASectionProps> = ({
   buttonText,
   variant = "default",
   image,
+  linkTo,
+  isExternal = false,
+  blank = false,
 }) => {
+  // Компонент кнопки с учетом ссылки
+  const ButtonComponent = () => {
+    if (linkTo) {
+      return (
+        <LinkButton 
+          variant="default" 
+          className="w-full bg-white text-black hover:bg-gray-100 py-4 text-md font-bold rounded-[20px]"
+          to={linkTo}
+          external={isExternal}
+          blank={blank}
+        >
+          {buttonText}
+        </LinkButton>
+      );
+    }
+    
+    return (
+      <Button 
+        variant="default" 
+        className="w-full bg-white text-black hover:bg-gray-100 py-4 text-md font-bold rounded-[20px]"
+      >
+        {buttonText}
+      </Button>
+    );
+  };
+
+  const TelegramButtonComponent = () => {
+    if (linkTo) {
+      return (
+        <LinkButton 
+          variant="ghost" 
+          className="w-full text-black font-bold py-4 text-center rounded-[20px]"
+          to={linkTo}
+          external={isExternal}
+          blank={blank}
+        >
+          {buttonText}
+        </LinkButton>
+      );
+    }
+    
+    return (
+      <Button 
+        variant="ghost" 
+        className="w-full text-black font-bold py-4 text-center rounded-[20px]"
+      >
+        {buttonText}
+      </Button>
+    );
+  };
+
+  const DefaultButtonComponent = () => {
+    if (linkTo) {
+      return (
+        <LinkButton 
+          variant="default" 
+          className="w-full rounded-[20px]"
+          to={linkTo}
+          external={isExternal}
+          blank={blank}
+        >
+          {buttonText}
+        </LinkButton>
+      );
+    }
+    
+    return (
+      <Button 
+        variant="default" 
+        className="w-full rounded-[20px]"
+      >
+        {buttonText}
+      </Button>
+    );
+  };
+
   if (variant === "guide") {
     return (
-      <section className="bg-[rgba(24,45,14,1)] flex w-full gap-[40px_48px] justify-center flex-wrap px-[220px] py-10 max-md:max-w-full max-md:px-5">
-        <div className="flex min-w-60 flex-col flex-1 shrink basis-[0%] max-md:max-w-full">
-          <h2 className="text-white text-[32px] font-bold text-center">
-            {title}
-          </h2>
-          <p className="self-stretch text-white text-sm font-normal leading-6 mt-2 max-md:max-w-full">
-            {description}
-          </p>
-          <Button variant="secondary" className="self-stretch mt-2">
-            {buttonText}
-          </Button>
+      <section className="flex flex-col p-5 bg-[#0ca65a] w-full rounded-[20px]">
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          {image && (
+            <div className="md:w-1/3 flex justify-center">
+              <img
+                src={image}
+                alt="Гайд по изучению польского языка - эффективные методики и советы"
+                className="w-32 md:w-40 object-contain"
+              />
+            </div>
+          )}
+          <div className="md:w-2/3">
+            <h2 className="text-white text-2xl md:text-3xl font-bold mb-4">
+              {title}
+            </h2>
+            <p className="text-white text-sm mb-6">
+              {description}
+            </p>
+            <ButtonComponent />
+          </div>
         </div>
-        {image && (
-          <img
-            src={image}
-            alt="Гайд по изучению польского языка - эффективные методики и советы"
-            className="aspect-[0.83] object-contain w-32 shrink-0"
-          />
-        )}
       </section>
     );
   }
 
-  return (
-    <section className="bg-[rgba(24,45,14,1)] flex w-full items-center gap-[40px_48px] flex-wrap px-[220px] py-10 max-md:max-w-full max-md:px-5">
-      <div className="self-stretch min-w-60 flex-1 shrink basis-12 my-auto max-md:max-w-full">
-        <h2 className="text-white text-[32px] font-bold leading-[48px] max-md:max-w-full">
-          {title}
-        </h2>
-        <p className="text-white text-sm font-normal leading-6 mt-3 max-md:max-w-full">
+  if (variant === "telegram") {
+    return (
+      <section className="flex flex-col p-5 bg-[#51b4e8] w-full rounded-[20px]">
+        <div className="flex flex-row items-center">
+          {image && (
+            <div className="mr-5">
+              <img
+                src={image}
+                alt="Telegram канал с упражнениями по польскому языку"
+                className="w-24 h-24 object-contain"
+              />
+            </div>
+          )}
+          <div className="flex flex-col">
+            <h2 className="text-white text-[24px] leading-[32px] font-bold uppercase">
+              {title}
+            </h2>
+          </div>
+        </div>
+        
+        <p className="text-white text-base max-md:max-w-full">
           {description}
         </p>
+        
+        <div className="bg-white rounded-[20px]">
+          <TelegramButtonComponent />
+        </div>
+      </section>
+    );
+  }
+
+  // Default variant
+  return (
+    <section className="flex flex-col p-5 bg-white w-full gap-5 rounded-[20px]">
+      <div className="flex flex-col gap-1 max-md:max-w-full">
+        <h2 className="text-black text-[24px] leading-[32px] font-bold">
+          {title}
+        </h2>
+        <p className="self-stretch text-black text-sm font-normal leading-6 max-md:max-w-full">
+          {description}
+        </p>
+        <DefaultButtonComponent />
       </div>
-      <Button variant="secondary" className="self-stretch my-auto">
-        {buttonText}
-      </Button>
     </section>
   );
 };

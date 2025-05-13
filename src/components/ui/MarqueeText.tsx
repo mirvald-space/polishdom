@@ -6,7 +6,7 @@ interface MarqueeTextProps {
 
 export const MarqueeText: React.FC<MarqueeTextProps> = ({ items }) => {
   return (
-    <div className="bg-[rgba(158,187,61,1)] overflow-hidden text-sm text-white font-bold uppercase pl-6 py-3 max-md:max-w-full max-md:pl-5">
+    <div className="bg-[#FF9801] text-sm text-black font-bold uppercase pl-6 py-3 max-md:max-w-full max-md:pl-5 overflow-hidden rounded-[20px]">
       <div className="flex whitespace-nowrap animate-marquee">
         {/* Первый набор элементов */}
         {items.map((item, index) => (

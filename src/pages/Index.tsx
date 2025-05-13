@@ -2,13 +2,19 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Features } from "@/components/sections/Features";
+import { Pain1 } from "@/components/sections/Pain-1";
+import { Pain2 } from "@/components/sections/Pain-2";
 import { Services } from "@/components/sections/Services";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { StudentResults } from "@/components/sections/StudentResults";
 import { CTASection } from "@/components/sections/CTASection";
-import { FreeResources } from "@/components/sections/FreeResources";
 import { MarqueeText } from "@/components/ui/MarqueeText";
 import { SEO } from "@/components/layout/SEO";
+import { Container } from "@/components/ui/Container";
+import { Stats } from "@/components/sections/Stats";
+import { Results } from "@/components/sections/Results";
+import { Methodology } from "@/components/sections/Methodology";
+import { Button } from "@/components/ui/button";
+import { FAQ } from "@/components/sections/FAQ";
 
 const marqueeItems = [
   { text: "Для взрослых" },
@@ -66,57 +72,71 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="bg-[rgba(235,240,231,1)] overflow-hidden">
+    <div className="bg-[#E7E7E7] overflow-hidden">
       <SEO 
         title="PolishDom - Изучение польского языка | Карта поляка | Сертификаты"
         description="Уроки польского языка для детей и взрослых. Подготовка к Карте поляка, экзаменам, сертификации. 6 лет опыта в обучении польскому языку."
         schema={schemaData}
       />
       
-      <Header />
+      
 
       <main>
-        <Hero />
-
-        <MarqueeText items={marqueeItems} />
-
-        <Features />
-
-        <CTASection
-          title="Нужна консультация"
-          description="Оставь свои контакты, я с тобой свяжусь, чтобы провести консультацию"
-          buttonText="Консультация (30 мин)"
-        />
-
-        <Services />
-
-        <CTASection
-          title={
-            <>
-              Пройдите бесплатный тест
-              <br />
-              на определение уровня языка
-            </>
-          }
-          description="Оставь свои контакты, а мы с тобой свяжемся, чтобы провести консультацию"
-          buttonText="Написать в телеграмм"
-          variant="test"
-        />
-
-        <Testimonials />
-
-        <CTASection
-          title="Гайд к обучению"
-          description="Как подойти к изучению польского, чтобы это было эффективно и легко?\nЯ составила для вас гайд, который повысит эффективность на 97%."
-          buttonText="Получить бесплатно"
-          variant="guide"
-          image="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/5c5b328d67cce306e33becfd04f3bbf99c6870fa?placeholderIfAbsent=true"
-        />
-
-        <FreeResources />
+        <Container>
+        <Header />
+          <Hero />
+          <MarqueeText items={marqueeItems} />
+          <Pain1 />
+          <Pain2 />
+          <Stats />
+          <Results />
+          <Methodology />
+          
+          <CTASection
+            title="Подготовка к собеседованию на Карту поляка"
+            description="Тренируйтесь отвечать на вопросы консула с помощью моего AI-бота. Симуляция реального собеседования поможет чувствовать себя увереннее и повысит ваши шансы на успех."
+            buttonText="Перейти к боту"
+            variant="telegram"
+            image="/consul.png"
+            linkTo="https://t.me/polishdom_bot"
+            isExternal={true}
+            blank={true}
+          />
+          <Services />
+          <FAQ />
+          <CTASection
+            title="ЕЖЕДНЕВНЫЕ УПРАЖНЕНИЯ И СОВЕТЫ В TELEGRAM"
+            description="Изучайте польский язык и культуру с моими материалами в Telegram"
+            buttonText="ПОДПИСАТЬСЯ НА КАНАЛ"
+            variant="telegram"
+            image="/bell.png"
+            linkTo="https://t.me/polishdom"
+            isExternal={true}
+            blank={true}
+          />
+          <StudentResults />
+          
+          <CTASection
+            title="15 СЕКРЕТОВ БЫСТРОГО ИЗУЧЕНИЯ ПОЛЬСКОГО"
+            description="Я составила для вас подробный гайд, который повысит эффективность вашего обучения на 97%. Узнайте проверенные методики и секреты быстрого освоения польского языка."
+            buttonText="ПОЛУЧИТЬ ЗА 0,99 ЗЛОТЫЙ (PDF)"
+            variant="guide"
+            image="/pdf.png"
+            linkTo="/guide"
+          />
+          <CTASection
+            title="НАЧНИТЕ ГОВОРИТЬ ПО-ПОЛЬСКИ УЖЕ ЧЕРЕЗ 1 МЕСЯЦ"
+            description="На бесплатном пробном занятии: Определите свой текущий уровень, Получите персональный план обучения, Узнаете точные сроки достижения B1 и B2"
+            buttonText="ЗАПИСАТЬСЯ НА БЕСПЛАТНОЕ ЗАНЯТИЕ"
+            variant="guide"
+            image="/pdf.png"
+          />
+          
+          <Footer />
+        </Container>
       </main>
 
-      <Footer />
+      
     </div>
   );
 };
