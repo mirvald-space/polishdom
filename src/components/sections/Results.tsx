@@ -28,7 +28,7 @@ export const Results: React.FC = () => {
             Больше всего в преподавании меня вдохновляют успехи моих учеников, их искренняя обратная связь и эмоции, которыми мы обмениваемся на занятиях. Мой подход к обучению – не просто преподавание языка, а создание пространства для комфортного погружения в польскую культуру и развития навыков, необходимых для достижения ваших целей.
           </p>
       
-      <div className="flex flex-col gap-[4px] mt-8">
+      <div className="flex flex-col gap-[4px]">
         <div className="flex justify-between items-center bg-[#072e0d] p-5 rounded-[20px]">
           <div className="text-[32px] font-bold text-white mr-10 w-32">6+</div>
           <div className="text-base text-white">лет опыта преподавания</div>
