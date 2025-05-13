@@ -59,7 +59,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
   return (
     <section className={cn("flex flex-col p-5 w-full rounded-[20px] gap-5", bgColor)}>
       <div className="flex flex-col ">
-        {image && (
+        {image ? (
           <div className=" flex justify-center items-center gap-5">
             <img
               src={image}
@@ -68,8 +68,12 @@ export const CTASection: React.FC<CTASectionProps> = ({
             />
             <h2 className={cn("text-[24px] leading-[32px] font-bold uppercase", textColor)}>
             {title}
-          </h2>
+            </h2>
           </div>
+        ) : (
+          <h2 className={cn("text-[32px] leading-[40px] font-bold uppercase", textColor)}>
+            {title}
+          </h2>
         )}
         
       </div>
