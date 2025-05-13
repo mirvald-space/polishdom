@@ -35,13 +35,13 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         </span>
       </div>
       {buttonUrl ? (
-        <Button className="mt-3" asChild>
+        <Button asChild>
           <a href={buttonUrl} target="_blank" rel="noopener noreferrer">
             {buttonText}
           </a>
         </Button>
       ) : (
-        <Button className="mt-3">{buttonText}</Button>
+        <Button >{buttonText}</Button>
       )}
     </div>
   );
