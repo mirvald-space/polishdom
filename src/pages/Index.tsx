@@ -96,7 +96,6 @@ const Index: React.FC = () => {
             title="Подготовка к собеседованию на Карту поляка"
             description="Тренируйтесь отвечать на вопросы консула с помощью моего AI-бота. Симуляция реального собеседования поможет чувствовать себя увереннее и повысит ваши шансы на успех."
             buttonText="Перейти к боту"
-            variant="bot"
             image=""
             linkTo="https://t.me/polishdom_bot"
             isExternal={true}
@@ -107,7 +106,8 @@ const Index: React.FC = () => {
             title="ЕЖЕДНЕВНЫЕ УПРАЖНЕНИЯ И СОВЕТЫ В TELEGRAM"
             description="Изучайте польский язык и культуру с моими материалами в Telegram"
             buttonText="ПОДПИСАТЬСЯ НА КАНАЛ"
-            variant="channel"
+            bgColor="bg-white"
+            textColor="text-black"
             image=""
             linkTo="https://t.me/polishdom"
             isExternal={true}
@@ -127,7 +127,6 @@ const Index: React.FC = () => {
             title="НАЧНИТЕ ГОВОРИТЬ ПО-ПОЛЬСКИ УЖЕ ЧЕРЕЗ 1 МЕСЯЦ"
             description="На бесплатном пробном занятии: Определите свой текущий уровень, Получите персональный план обучения, Узнаете точные сроки достижения B1 и B2"
             buttonText="ЗАПИСАТЬСЯ НА БЕСПЛАТНОЕ ЗАНЯТИЕ"
-            variant="guide"
             image=""
             linkTo="https://t.me/+uWJA2uwCffE5YmU8"
             isExternal={true}
