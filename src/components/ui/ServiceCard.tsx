@@ -23,11 +23,11 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className="text-2xl leading-none uppercase">
         {title}
       </div>
-      <div className="font-normal leading-5 mt-3 text-[rgba(59,56,40,1)]">
+      <div className="font-normal leading-5 mt-3 text-base">
         {description}
       </div>
       <div className="mt-3">
-        <span className="font-bold text-[32px] leading-[39px] text-[rgba(17,17,17,1)]">
+        <span className="font-bold text-[24px] leading-[32px] text-[rgba(17,17,17,1)]">
           {price}
         </span>{" "}
         <span className="font-normal text-base leading-[19px] text-[rgba(59,56,40,1)]">
