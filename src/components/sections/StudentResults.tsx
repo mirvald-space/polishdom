@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 interface Review {
   name: string;
@@ -60,13 +61,13 @@ export const StudentResults: React.FC = () => {
         РЕЗУЛЬТАТЫ МОИХ УЧЕНИКОВ
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-        <div className="bg-gray-50 p-5 rounded-lg flex flex-col items-center justify-center">
-          <div className="text-5xl font-bold mb-2">10+</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+        <div className="bg-[#FAFAFA] p-5 rounded-lg flex flex-col items-center justify-center">
+          <div className="text-[24px] leading-[32px] font-bold mb-2">10+</div>
           <div className="text-center">получили карту поляка</div>
         </div>
-        <div className="bg-gray-50 p-5 rounded-lg flex flex-col items-center justify-center">
-          <div className="text-5xl font-bold mb-2">100%</div>
+        <div className="bg-[#FAFAFA] p-5 rounded-lg flex flex-col items-center justify-center">
+          <div className="text-[24px] leading-[32px] font-bold mb-2">100%</div>
           <div className="text-center">успешно сдали экзамены</div>
         </div>
       </div>
@@ -96,29 +97,25 @@ export const StudentResults: React.FC = () => {
           </div>
         </div>
         <p className="text-gray-700 mb-3">{reviews[currentIndex].text}</p>
-        <div className="text-blue-600 hover:underline cursor-pointer">
+        <a href="https://preply.com/ru/repetitor/587221" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline cursor-pointer">
           Смотреть оригинал
-        </div>
+        </a>
       </div>
 
       <div className="flex justify-center gap-4 mt-4">
         <button 
           onClick={prevReview}
-          className="bg-gray-100 hover:bg-gray-200 p-3 rounded-full"
+          className="bg-gray-100 hover:bg-gray-200 p-3 rounded-[20px]"
           aria-label="Предыдущий отзыв"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          <FaChevronLeft className="h-6 w-6" />
         </button>
         <button 
           onClick={nextReview}
-          className="bg-gray-100 hover:bg-gray-200 p-3 rounded-full"
+          className="bg-gray-100 hover:bg-gray-200 p-3 rounded-[20px]"
           aria-label="Следующий отзыв"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <FaChevronRight className="h-6 w-6" />
         </button>
       </div>
     </section>
