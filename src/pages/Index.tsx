@@ -13,7 +13,6 @@ import { Container } from "@/components/ui/Container";
 import { Stats } from "@/components/sections/Stats";
 import { Results } from "@/components/sections/Results";
 import { Methodology } from "@/components/sections/Methodology";
-import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/sections/FAQ";
 
 const marqueeItems = [
