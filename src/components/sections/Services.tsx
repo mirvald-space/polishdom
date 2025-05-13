@@ -16,6 +16,7 @@ export const Services: React.FC = () => {
           price="от 119zł"
           priceDescription="/ за 60-минутный урок"
           buttonText="Забронировать урок"
+          buttonUrl="https://t.me/katarzyna11"
         />
 
     </section>

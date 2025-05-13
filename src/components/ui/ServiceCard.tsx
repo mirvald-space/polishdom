@@ -7,6 +7,7 @@ interface ServiceCardProps {
   price: string;
   priceDescription: string;
   buttonText: string;
+  buttonUrl?: string;
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -15,6 +16,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   price,
   priceDescription,
   buttonText,
+  buttonUrl,
 }) => {
   return (
     <div className="bg-[#FAFAFA] p-5 flex min-w-60 flex-col items-stretch flex-1 shrink basis-[0%] rounded-[20px] gap-5">
@@ -32,7 +34,15 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           {priceDescription}
         </span>
       </div>
-      <Button className="mt-3">{buttonText}</Button>
+      {buttonUrl ? (
+        <Button className="mt-3" asChild>
+          <a href={buttonUrl} target="_blank" rel="noopener noreferrer">
+            {buttonText}
+          </a>
+        </Button>
+      ) : (
+        <Button className="mt-3">{buttonText}</Button>
+      )}
     </div>
   );
 };
