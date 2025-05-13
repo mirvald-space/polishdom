@@ -99,6 +99,7 @@ const Index: React.FC = () => {
             textColor="text-white"
             buttonClassName="self-start uppercase bg-white text-black font-bold w-full hover:bg-white/80 hover:text-black"
             onClick={scrollToResults}
+            image="/hero.png"
           />
           <MarqueeText items={marqueeItems} />
           <Pain1 />
