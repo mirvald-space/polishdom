@@ -6,6 +6,7 @@ interface ServiceCardProps {
   description: string;
   price: string;
   priceDescription: string;
+  features?: string[]; // список того, что входит в тариф
   buttonText: string;
   buttonUrl?: string;
 }
@@ -15,6 +16,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
   price,
   priceDescription,
+  features,
   buttonText,
   buttonUrl,
 }) => {
@@ -26,14 +28,28 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className="font-normal leading-5 mt-3 text-base">
         {description}
       </div>
-      <div className="mt-3">
+      
+      {features && features.length > 0 && (
+        <div className="mt-2">
+          <ul className="list-disc pl-5 text-sm space-y-1">
+            {features.map((feature, index) => (
+              <li key={index}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      
+      <div className="mt-1">
         <span className="font-bold text-[24px] leading-[32px] text-[rgba(17,17,17,1)]">
           {price}
-        </span>{" "}
-        <span className="font-normal text-base leading-[19px] text-[rgba(59,56,40,1)]">
-          {priceDescription}
         </span>
+        {priceDescription && (
+          <p className="mt-1 text-sm italic text-gray-600">
+            {priceDescription}
+          </p>
+        )}
       </div>
+      
       {buttonUrl ? (
         <Button asChild>
           <a href={buttonUrl} target="_blank" rel="noopener noreferrer">
