@@ -7,7 +7,7 @@ export const Results: React.FC = () => {
         МОИ РЕЗУЛЬТАТЫ ЗА 6+ ЛЕТ ОБУЧЕНИЯ:
       </h2>
 
-      <div className="flex flex-col md:flex-row gap-5 items-center max-md:max-w-full">
+      <div className="flex flex-col md:flex-row gap-5 max-md:max-w-full">
         <div className="md:w-1/2">
           <img 
             src="/ava.png" 
