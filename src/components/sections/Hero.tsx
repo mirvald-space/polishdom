@@ -10,7 +10,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full h-[346px] overflow-hidden rounded-[20px]">
+    <section className="relative w-full h-[346px] overflow-hidden rounded-[20px] z-[5]">
       {/* Container with fixed aspect ratio */}
       <div className="absolute inset-0 w-full h-full">
         {/* Background image with blur effect */}
