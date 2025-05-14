@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
         
         {/* Text overlay - positioned BEHIND the building */}
         <div className="absolute inset-0 flex justify-center p-5 z-10">
-          <h1 className="text-[32px] md:text-[32px] leading-[1.2] font-bold uppercase text-white text-center max-w-[800px]">
+          <h1 className="text-[28px] md:text-[28px] leading-[32px] font-bold uppercase text-white text-center max-w-[800px]">
             Выучить польский до уровня B2 возможно за 7-9 месяцев
           </h1>
         </div>
