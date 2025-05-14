@@ -88,7 +88,8 @@ const Index: React.FC = () => {
       <main>
         <Container>
         <Header />
-          <CTASection
+        <Hero />
+          {/* <CTASection
             title="Выучить польский до уровня B2 возможно за 7-9 месяцев"
             description="Большинство студентов тратят более 2 лет на то, что можно освоить гораздо быстрее"
             buttonText="Начать изучать польский язык"
@@ -97,7 +98,7 @@ const Index: React.FC = () => {
             buttonClassName="self-start uppercase bg-white text-black font-bold w-full hover:bg-white/80 hover:text-black"
             onClick={scrollToResults}
             image="/hero.png"
-          />
+          /> */}
           <MarqueeText items={marqueeItems} />
           <PainPointsAndStats />
           <Results />
