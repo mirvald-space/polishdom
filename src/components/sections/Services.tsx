@@ -5,7 +5,7 @@ export const Services: React.FC = () => {
   return (
     <section
       id="services"
-      className="flex flex-col gap-5 w-full bg-white p-5 max-md:max-w-full max-md:px-5 rounded-[20px]"
+      className="flex flex-col gap-5 w-full bg-white p-5 max-md:max-w-full max-md:px-5 rounded-[20px] border-[#E2DEDE] border"
     >
       <h2 className="text-[24px] leading[32px] uppercase font-bold">Инвестиции в ваше языковое будущее</h2>
 

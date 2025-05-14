@@ -43,7 +43,7 @@ export const Methodology: React.FC = () => {
   ];
 
   return (
-    <section id="methodology" className="w-full bg-white p-5 max-md:max-w-full rounded-[20px]">
+    <section id="methodology" className="w-full bg-white p-5 max-md:max-w-full rounded-[20px] border-[#E2DEDE] border">
       <h2 className="text-[24px] leading-[32px] font-bold uppercase max-md:max-w-full">
         КАК МОИ УЧЕНИКИ ДОСТИГАЮТ УРОВНЯ B2 ЗА 7-9 МЕСЯЦЕВ
       </h2>

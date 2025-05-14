@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="w-full text-sm bg-white leading-6 p-5 rounded-[20px]">
+    <header className="w-full text-sm bg-white leading-6 p-5 rounded-[20px] border-[#E2DEDE] border">
       {/* Overlay с эффектом размытия */}
       <div 
         className={`fixed inset-0 bg-black/5 backdrop-blur-sm transition-all duration-300 z-10 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}

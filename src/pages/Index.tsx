@@ -2,15 +2,13 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Pain1 } from "@/components/sections/Pain-1";
-import { Pain2 } from "@/components/sections/Pain-2";
+import { PainPointsAndStats } from "@/components/sections/PainPointsAndStats";
 import { Services } from "@/components/sections/Services";
 import { StudentResults } from "@/components/sections/StudentResults";
 import { CTASection } from "@/components/sections/CTASection";
 import { MarqueeText } from "@/components/ui/MarqueeText";
 import { SEO } from "@/components/layout/SEO";
 import { Container } from "@/components/ui/Container";
-import { Stats } from "@/components/sections/Stats";
 import { Results } from "@/components/sections/Results";
 import { Methodology } from "@/components/sections/Methodology";
 import { FAQ } from "@/components/sections/FAQ";
@@ -78,7 +76,7 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#E7E7E7] overflow-hidden">
+    <div className="bg-[#FDFDFD] overflow-hidden">
       <SEO 
         title="PolishDom - Изучение польского языка | Карта поляка | Сертификаты"
         description="Уроки польского языка для детей и взрослых. Подготовка к Карте поляка, экзаменам, сертификации. 6 лет опыта в обучении польскому языку."
@@ -101,9 +99,7 @@ const Index: React.FC = () => {
             image="/hero.png"
           />
           <MarqueeText items={marqueeItems} />
-          <Pain1 />
-          <Pain2 />
-          <Stats />
+          <PainPointsAndStats />
           <Results />
           <Methodology />
           

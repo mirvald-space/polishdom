@@ -24,7 +24,7 @@ export const FAQ: React.FC = () => {
   return (
     <section
       id="faq"
-      className="w-full bg-white p-5 max-md:max-w-full max-md:px-5 rounded-[20px]"
+      className="w-full bg-white p-5 max-md:max-w-full max-md:px-5 rounded-[20px] border-[#E2DEDE] border"
     >
       <h2 className="text-[24px] leading-[32px] uppercase font-bold mb-6">Частые вопросы</h2>
 

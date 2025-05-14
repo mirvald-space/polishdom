@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Container } from "@/components/ui/Container";
 
 export const Footer: React.FC = () => {
   return (
 
-    <footer className="flex flex-col w-full p-5 gap-5 bg-white rounded-[20px]">
+    <footer className="flex flex-col w-full p-5 gap-5 bg-white rounded-[20px] border-[#E2DEDE] border">
       
         <div className="flex flex-col gap-5 items-stretch text-sm text-[rgba(59,56,40,1)]">
           <div className="flex  overflow-hidden font-bold whitespace-nowrap leading-6">
