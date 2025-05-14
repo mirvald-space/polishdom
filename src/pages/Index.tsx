@@ -102,18 +102,22 @@ const Index: React.FC = () => {
             linkTo="https://t.me/polishdom_bot"
             isExternal={true}
             blank={true}
+            bgGradient="linear-gradient(to right, #0BA360, #3CBA92)"
+            textColor="text-white"
+            buttonClassName="bg-white text-black hover:bg-white/90 hover:text-black font-bold"
           />
           <StudentResults />
           <CTASection
             title="ЕЖЕДНЕВНЫЕ УПРАЖНЕНИЯ И СОВЕТЫ В TELEGRAM"
             description="Изучайте польский язык и культуру с моими ежедневными материалами в Telegram: практические упражнения, полезные фразы, культурные заметки и эксклюзивные советы для быстрого прогресса"
             buttonText="ПОДПИСАТЬСЯ НА КАНАЛ"
-            bgColor="bg-white"
-            textColor="text-black"
+            bgGradient="linear-gradient(to right, #57B9EB, #42A5D7)"
+            textColor="text-white"
             image="/channel.png"
             linkTo="https://t.me/polishdom"
             isExternal={true}
             blank={true}
+            buttonClassName="bg-white text-black hover:bg-white/90 hover:text-black font-bold"
           />
           <Services />
           <FAQ />
@@ -125,6 +129,9 @@ const Index: React.FC = () => {
             linkTo="https://t.me/katarzyna11"
             isExternal={true}
             blank={true}
+            bgGradient="linear-gradient(to right, #8E2DE2, #4A00E0)"
+            textColor="text-white"
+            buttonClassName="bg-white text-black hover:bg-white/90 hover:text-black font-bold"
           />
           
           <Footer />

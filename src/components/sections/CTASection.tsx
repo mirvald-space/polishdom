@@ -8,6 +8,7 @@ interface CTASectionProps {
   buttonText: string;
   bgColor?: string;
   textColor?: string;
+  bgGradient?: string;
   image?: string;
   linkTo?: string;
   isExternal?: boolean;
@@ -23,6 +24,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
   buttonText,
   bgColor = "bg-white",
   textColor = "text-black",
+  bgGradient,
   image,
   linkTo,
   isExternal = false,
@@ -60,14 +62,20 @@ export const CTASection: React.FC<CTASectionProps> = ({
   };
 
   return (
-    <section className={cn("flex flex-col p-5 w-full rounded-[20px] gap-5 border-[#E2DEDE] border", bgColor)}>
+    <section 
+      className={cn(
+        "flex flex-col p-5 w-full rounded-[20px] gap-5 border-[#E2DEDE] border", 
+        bgGradient || bgColor,
+      )}
+      style={bgGradient ? { background: bgGradient } : undefined}
+    >
       <div className="flex flex-col ">
         {image ? (
           <div className=" flex justify-center items-center gap-5">
             <img
               src={image}
               alt={imageAlt}
-              className="w-32 md:w-40 object-contain"
+              className="w-32 max-w-[128px] object-contain"
             />
             <h2 className={cn("text-[24px] leading-[32px] font-bold uppercase", textColor)}>
             {title}
