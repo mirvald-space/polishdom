@@ -54,7 +54,7 @@ export const PainPointsAndStats: React.FC = () => {
       {/* Third section: Statistics */}
       <section className="flex flex-col w-full bg-white p-5 max-md:max-w-full rounded-[20px] border-[#E2DEDE] border gap-5">
         <h2 className="text-[24px] leading-[32px] font-bold uppercase max-md:max-w-full">
-          Статистика
+        Немного статистики
         </h2>
 
         <div className="bg-[#FAFAFA] min-w-60 text-sm font-normal leading-5 flex-1 shrink basis-[0%] p-[18px] rounded-[18px] border-[rgba(59,56,40,0.1)] border-solid max-md:max-w-full">

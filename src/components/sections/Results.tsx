@@ -5,7 +5,7 @@ export const Results: React.FC = () => {
   return (
     <section id="results" className="flex flex-col gap-5 w-full bg-[#0F3516] text-white p-5 max-md:max-w-full rounded-[20px]">
       <h2 className="text-[24px] leading-[32px] font-bold uppercase max-md:max-w-full">
-        ОПЫТ И ЭКСПЕРТИЗА В ПОЛЬСКОМ ЯЗЫКЕ
+      мой опыт и экспертиза в польском языке
       </h2>
 
       <div className="flex flex-col md:flex-row gap-5 max-md:max-w-full">
