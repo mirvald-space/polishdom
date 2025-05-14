@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLanguage } from "react-icons/fa";
 
 export const Results: React.FC = () => {
   return (
@@ -15,9 +16,15 @@ export const Results: React.FC = () => {
             className="w-full min-w-[128px] max-w-[128px] rounded-[20px]"
           />
         </div>
+        <div className="flex flex-col gap-2">
           <p className="text-base">
             Привет, меня зовут Катя, и я помогаю ученикам уверенно говорить на польском языке и успешно получать Карту поляка.
           </p>
+          <a href="https://preply.com/ru/repetitor/587221" className="flex items-center gap-2 text-base underline hover:text-white/80" target="_blank" rel="noopener noreferrer">
+            <FaLanguage size={20} />
+            Мой профиль на Preply
+          </a>
+        </div>
       </div>
       <ul className="list-none">
             <li>• С 8 класса училась польскому в школе</li>
