@@ -14,7 +14,7 @@ const PrivacyPolicy: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#E7E7E7] overflow-hidden">
+    <div className="bg-[#E7E7E7] overflow-hidden bg-dot-pattern">
       <SEO 
         title="Политика конфиденциальности | PolishDom"
         description="Политика конфиденциальности школы польского языка PolishDom"

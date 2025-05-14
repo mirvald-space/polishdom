@@ -49,6 +49,11 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Dot grid pattern variables */
+    --dot-size: 1px;
+    --dot-space: 20px;
+    --dot-color: rgba(0, 0, 0, 0.1);
   }
 
   .dark {
@@ -87,6 +92,9 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Dot grid pattern variables for dark mode */
+    --dot-color: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -97,5 +105,24 @@
 
   body {
     @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(
+        var(--dot-color) var(--dot-size), 
+        transparent var(--dot-size)
+      );
+    background-size: var(--dot-space) var(--dot-space);
+    background-position: center;
+  }
+}
+
+@layer utilities {
+  .bg-dot-pattern {
+    background-image: 
+      radial-gradient(
+        var(--dot-color, rgba(0, 0, 0, 0.1)) var(--dot-size, 1px), 
+        transparent var(--dot-size, 1px)
+      );
+    background-size: var(--dot-space, 20px) var(--dot-space, 20px);
+    background-position: center;
   }
 }

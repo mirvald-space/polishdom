@@ -76,7 +76,7 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#FDFDFD] overflow-hidden">
+    <div className="bg-[#FDFDFD] overflow-hidden bg-dot-pattern">
       <SEO 
         title="PolishDom - Изучение польского языка | Карта поляка | Сертификаты"
         description="Уроки польского языка для детей и взрослых. Подготовка к Карте поляка, экзаменам, сертификации. 6 лет опыта в обучении польскому языку."

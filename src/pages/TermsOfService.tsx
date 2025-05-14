@@ -14,7 +14,7 @@ const TermsOfService: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#E7E7E7] overflow-hidden">
+    <div className="bg-[#E7E7E7] overflow-hidden bg-dot-pattern">
       <SEO 
         title="Договор оферты | PolishDom"
         description="Договор оферты на услуги обучения польскому языку в школе PolishDom"
