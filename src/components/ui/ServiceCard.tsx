@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "./button";
 
 interface ServiceCardProps {
-  title: string;
   description: string;
   price: string;
   priceDescription: string;
@@ -12,7 +11,7 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
-  title,
+
   description,
   price,
   priceDescription,
@@ -22,16 +21,13 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <div className="bg-[#FAFAFA] p-5 flex min-w-60 flex-col items-stretch flex-1 shrink basis-[0%] rounded-[20px] gap-5">
-      <div className="text-2xl leading-none uppercase">
-        {title}
-      </div>
-      <div className="font-normal leading-5 mt-3 text-base">
+      <div className="font-normal  mt-3 text-base">
         {description}
       </div>
       
       {features && features.length > 0 && (
         <div className="mt-2">
-          <ul className="list-disc pl-5 text-sm space-y-1">
+          <ul className="list-disc pl-5 text-base">
             {features.map((feature, index) => (
               <li key={index}>{feature}</li>
             ))}
