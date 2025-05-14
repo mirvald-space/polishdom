@@ -7,7 +7,7 @@ interface ContainerProps {
 
 export function Container({ children, className = "" }: ContainerProps) {
   return (
-    <div className={`flex flex-col max-w-[462px] mx-auto gap-[20px] py-[20px] ${className}`}>
+    <div className={`flex flex-col max-w-[462px] mx-auto gap-[20px] lg:p-[0px] p-[20px] ${className}`}>
       {children}
     </div>
   );

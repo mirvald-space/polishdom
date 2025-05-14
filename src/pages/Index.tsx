@@ -91,7 +91,7 @@ const Index: React.FC = () => {
           <CTASection
             title="Выучить польский до уровня B2 возможно за 7-9 месяцев"
             description="Большинство студентов тратят более 2 лет на то, что можно освоить гораздо быстрее"
-            buttonText="Узнать, как выучить польский быстрее"
+            buttonText="Начать изучать польский язык"
             bgColor="bg-[#CA4237]"
             textColor="text-white"
             buttonClassName="self-start uppercase bg-white text-black font-bold w-full hover:bg-white/80 hover:text-black"
