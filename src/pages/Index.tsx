@@ -89,16 +89,6 @@ const Index: React.FC = () => {
         <Container>
         <Header />
         <Hero />
-          {/* <CTASection
-            title="Выучить польский до уровня B2 возможно за 7-9 месяцев"
-            description="Большинство студентов тратят более 2 лет на то, что можно освоить гораздо быстрее"
-            buttonText="Начать изучать польский язык"
-            bgColor="bg-[#CA4237]"
-            textColor="text-white"
-            buttonClassName="self-start uppercase bg-white text-black font-bold w-full hover:bg-white/80 hover:text-black"
-            onClick={scrollToResults}
-            image="/hero.png"
-          /> */}
           <MarqueeText items={marqueeItems} />
           <PainPointsAndStats />
           <Results />
@@ -126,14 +116,6 @@ const Index: React.FC = () => {
             blank={true}
           />
           <Services />
-          {/* <CTASection
-            title="15 СЕКРЕТОВ БЫСТРОГО ИЗУЧЕНИЯ ПОЛЬСКОГО"
-            description="Я составила для вас подробный гайд, который повысит эффективность вашего обучения на 97%. Узнайте проверенные методики и секреты быстрого освоения польского языка."
-            buttonText="ПОЛУЧИТЬ ЗА 0,99 ЗЛОТЫЙ (PDF)"
-            variant="guide"
-            image="/pdf.png"
-            linkTo="/guide"
-          /> */}
           <FAQ />
           <CTASection
             title="НАЧНИТЕ ГОВОРИТЬ ПО-ПОЛЬСКИ УЖЕ ЧЕРЕЗ 1 МЕСЯЦ"
