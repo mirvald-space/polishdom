@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
           <img 
             src="/с фоном.png" 
             alt="Warsaw skyline" 
-            className="w-full h-full object-cover blur-[2px] filter"
+            className="w-full h-full object-cover  filter"
           />
           {/* Dark overlay for better text visibility */}
           <div className="absolute inset-0 bg-black/20"></div>
