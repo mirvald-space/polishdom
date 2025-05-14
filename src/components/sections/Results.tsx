@@ -20,10 +20,6 @@ export const Results: React.FC = () => {
           <p className="text-base">
             Привет, меня зовут Катя, и я помогаю ученикам уверенно говорить на польском языке и успешно получать Карту поляка.
           </p>
-          <a href="https://preply.com/ru/repetitor/587221" className="flex items-center gap-2 text-base underline hover:text-white/80" target="_blank" rel="noopener noreferrer">
-            <FaLanguage size={20} />
-            Мой профиль на Preply
-          </a>
         </div>
       </div>
       <ul className="list-none">
@@ -51,6 +47,10 @@ export const Results: React.FC = () => {
           <div className="text-base text-white">занятий провела онлайн</div>
         </div>
       </div>
+      <a href="https://preply.com/ru/repetitor/587221" className="flex justify-center items-center gap-2 text-base underline hover:text-white/80" target="_blank" rel="noopener noreferrer">
+            <FaLanguage size={20} />
+            Мой профиль на Preply
+          </a>
     </section>
   );
 }; 
