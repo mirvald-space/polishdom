@@ -11,7 +11,7 @@ const Blog: React.FC = () => {
     "@type": "Blog",
     "headline": "Блог - статьи о польском языке",
     "description": "Статьи и советы по изучению польского языка, подготовке к экзаменам и культуре Польши",
-    "url": "https://polishdom.ru/blog",
+    "url": "https://polishdom.com/blog",
     "author": {
       "@type": "Person",
       "name": "PolishDom"

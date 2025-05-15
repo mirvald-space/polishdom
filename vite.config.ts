@@ -16,4 +16,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: "dist",
+  },
+  publicDir: "public",
+  appType: "spa",
 }));
