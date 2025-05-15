@@ -21,7 +21,8 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-1 p-5 bg-[#fafafa] rounded-[20px]">
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <Link to="/blog">Блог</Link>
               <Link to="/terms-of-service" target="_blank">Договор</Link>
               <Link to="/privacy-policy" target="_blank">
                 Политика
