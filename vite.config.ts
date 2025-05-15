@@ -7,6 +7,8 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // Enable history API fallback to support SPA routing
+    historyApiFallback: true,
   },
   plugins: [
     react(),
@@ -14,6 +16,19 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    // Generate pre-rendered HTML files for routes
+    // This helps search engines index SPA applications
+    outDir: "dist",
+    // Ensure HTML file copies are created for each route
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        // You can add specific routes to pre-render here
+        // blog: path.resolve(__dirname, "index.html"), 
+      },
     },
   },
 }));

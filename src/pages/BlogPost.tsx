@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEO } from "@/components/layout/SEO";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import NotFound from "./NotFound";
 
 interface BlogPostMetadata {
   title: string;
@@ -29,15 +28,22 @@ const availableSlugs = [
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const [post, setPost] = useState<BlogPostData | null>(null);
+  const navigate = useNavigate();
+  const [post, setPost] = useState<{
+    title: string;
+    date: string;
+    content: string;
+    imageUrl: string;
+    excerpt: string;
+  } | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchBlogPost() {
-      if (!slug || !availableSlugs.includes(slug)) {
+      if (!slug) {
+        setError("Пост не найден");
         setLoading(false);
-        setError(true);
         return;
       }
 
@@ -45,23 +51,33 @@ const BlogPost: React.FC = () => {
         const response = await fetch(`/blog-content/${slug}.md`);
         
         if (!response.ok) {
-          throw new Error(`Failed to fetch blog post: ${response.status}`);
+          if (response.status === 404) {
+            setError("Пост не найден");
+            console.error(`Blog post not found: ${slug}`);
+          } else {
+            setError("Ошибка загрузки поста");
+            console.error(`Failed to fetch blog post: ${response.status}`);
+          }
+          setLoading(false);
+          return;
         }
         
         const mdText = await response.text();
         
-        // Парсинг frontmatter и контента
+        // Парсинг frontmatter
         const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
         const match = mdText.match(frontmatterRegex);
         
         if (!match) {
-          throw new Error("Invalid markdown format");
+          setError("Неверный формат поста");
+          setLoading(false);
+          return;
         }
         
         const frontmatterText = match[1];
         const content = match[2];
         
-        // Парсинг frontmatter
+        // Создаем объект метаданных
         const metadata: any = {};
         const frontmatterLines = frontmatterText.split('\n');
         frontmatterLines.forEach(line => {
@@ -71,18 +87,22 @@ const BlogPost: React.FC = () => {
           }
         });
         
+        // Извлекаем первый абзац для использования в качестве excerpt
+        const excerptMatch = content.trim().match(/^(.*?)(?:\n\n|\n##|$)/);
+        const excerpt = excerptMatch ? excerptMatch[1].replace(/^#+\s+.*\n/, '') : ""; 
+        
         setPost({
-          title: metadata.title,
-          date: metadata.date,
-          author: metadata.author,
-          imageUrl: metadata.imageUrl,
-          content
+          title: metadata.title || "Без названия",
+          date: metadata.date || new Date().toISOString().substring(0, 10),
+          content,
+          imageUrl: metadata.imageUrl || "/placeholder.jpg",
+          excerpt
         });
         
         setLoading(false);
-      } catch (err) {
-        console.error("Error fetching blog post:", err);
-        setError(true);
+      } catch (error) {
+        console.error(`Error fetching blog post:`, error);
+        setError("Ошибка загрузки поста");
         setLoading(false);
       }
     }
@@ -97,11 +117,11 @@ const BlogPost: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="bg-[#FDFDFD] overflow-hidden bg-dot-pattern">
+      <div className="bg-[#FDFDFD] overflow-hidden bg-dot-pattern min-h-screen">
         <Container>
           <Header />
-          <div className="py-16 text-center">
-            <h1 className="text-3xl font-bold mb-4">Загрузка...</h1>
+          <div className="py-8 text-center">
+            <p>Загрузка...</p>
           </div>
           <Footer />
         </Container>
@@ -110,80 +130,83 @@ const BlogPost: React.FC = () => {
   }
 
   if (error || !post) {
-    return (
-      <div className="bg-[#FDFDFD] overflow-hidden bg-dot-pattern">
-        <Container>
-          <Header />
-          <div className="py-16 text-center">
-            <h1 className="text-3xl font-bold mb-4">Статья не найдена</h1>
-            <p className="mb-8">Запрашиваемая статья не существует или была удалена.</p>
-            <Button asChild>
-              <Link to="/blog">Вернуться к списку статей</Link>
-            </Button>
-          </div>
-          <Footer />
-        </Container>
-      </div>
-    );
+    return <NotFound />;
   }
   
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "image": post.imageUrl,
-    "datePublished": post.date,
-    "author": {
-      "@type": "Person",
-      "name": post.author
-    }
-  };
-
   return (
     <div className="bg-[#FDFDFD] overflow-hidden bg-dot-pattern">
       <SEO 
-        title={`${post.title} | Блог PolishDom`}
-        description={`Статья о польском языке и культуре: ${post.title}`}
-        schema={schemaData}
+        title={`${post.title} - PolishDom`}
+        description={post.excerpt || "Статья о польском языке и культуре от PolishDom"}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "image": post.imageUrl ? [post.imageUrl] : [],
+          "datePublished": post.date,
+          "author": {
+            "@type": "Organization",
+            "name": "PolishDom"
+          }
+        }}
       />
       
       <main>
         <Container>
           <Header />
-          
-          <div className="py-8">
-            <Button variant="outline" asChild className="mb-6">
-              <Link to="/blog" className="flex items-center gap-2">
-                <ChevronLeft className="h-4 w-4" />
-                Вернуться к списку статей
-              </Link>
-            </Button>
-            
-            <div className="max-w-3xl mx-auto">
-              <div className="rounded-lg overflow-hidden mb-6 aspect-video">
-                <img 
-                  src={post.imageUrl} 
-                  alt={post.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
-              
-              <div className="flex items-center text-muted-foreground mb-8">
+          <article className="py-8 prose prose-slate max-w-none">
+            <div className="mb-8">
+              <div className="flex items-center gap-2 text-muted-foreground mb-4">
                 <span>{formatDate(post.date)}</span>
-                <span className="mx-2">•</span>
-                <span>{post.author}</span>
+                <span>•</span>
+                <span>PolishDom</span>
               </div>
               
-              <div className="prose prose-lg max-w-none">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {post.content}
-                </ReactMarkdown>
-              </div>
+              <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
+              
+              {post.imageUrl && (
+                <div className="my-8 rounded-[20px] overflow-hidden">
+                  <img 
+                    src={post.imageUrl} 
+                    alt={post.title} 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              )}
             </div>
-          </div>
-          
+            
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                a: ({ node, ...props }) => (
+                  <a {...props} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" />
+                ),
+                h2: ({ node, ...props }) => (
+                  <h2 {...props} className="text-2xl font-semibold mt-10 mb-4" />
+                ),
+                h3: ({ node, ...props }) => (
+                  <h3 {...props} className="text-xl font-semibold mt-8 mb-3" />
+                ),
+                ul: ({ node, ...props }) => (
+                  <ul {...props} className="list-disc pl-6 my-4" />
+                ),
+                ol: ({ node, ...props }) => (
+                  <ol {...props} className="list-decimal pl-6 my-4" />
+                ),
+                li: ({ node, ...props }) => (
+                  <li {...props} className="mb-2" />
+                ),
+                p: ({ node, ...props }) => (
+                  <p {...props} className="my-4 leading-relaxed" />
+                ),
+                img: ({ node, ...props }) => (
+                  <img {...props} className="my-6 rounded-md max-w-full h-auto" />
+                ),
+              }}
+            >
+              {post.content}
+            </ReactMarkdown>
+          </article>
           <Footer />
         </Container>
       </main>
