@@ -19,7 +19,8 @@
       "/blog/przygotowanie-do-rozmowy-karta-polaka",
       "/blog/polskie-seriale-do-nauki-jezyka",
       "/terms-of-service",
-      "/privacy-policy"
+      "/privacy-policy",
+      "/sitemap"
     ],
     "source": "dist",
     "skipThirdPartyRequests": true,
