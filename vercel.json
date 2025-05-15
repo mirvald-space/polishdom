@@ -4,6 +4,14 @@
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
+  "redirects": [
+    { "source": "/blog/blog/:slug", "destination": "/blog/:slug", "permanent": true },
+    { "source": "/blog/polskie-seriale-do-nauki-jezyka", "destination": "/blog/polskie-seriale-do-nauki-jezyka", "statusCode": 301 },
+    { "source": "/blog/10-sposobow-uczyc-sie-slowek", "destination": "/blog/10-sposobow-uczyc-sie-slowek", "statusCode": 301 },
+    { "source": "/blog/przygotowanie-do-rozmowy-karta-polaka", "destination": "/blog/przygotowanie-do-rozmowy-karta-polaka", "statusCode": 301 },
+    { "source": "/terms-of-service", "destination": "/terms-of-service", "statusCode": 301 },
+    { "source": "/privacy-policy", "destination": "/privacy-policy", "statusCode": 301 }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -11,6 +19,19 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "Link", 
+          "value": "<https://polishdom.com>; rel=canonical"
+        }
+      ]
+    },
+    {
+      "source": "/blog/:slug",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://polishdom.com/blog/:slug>; rel=canonical"
         }
       ]
     },

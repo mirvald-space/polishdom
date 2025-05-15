@@ -27,13 +27,17 @@ export const SEO: React.FC<SEOProps> = ({
   let canonicalUrl = siteUrl;
 
   if (canonical) {
-    // Проверяем, начинается ли canonical с "/"
-    canonicalUrl = canonical.startsWith('/') 
-      ? `${siteUrl}${canonical}` 
-      : `${siteUrl}/${canonical}`;
+    // Нормализуем канонический URL
+    // 1. Убедимся, что путь начинается с "/"
+    const normalizedPath = canonical.startsWith('/') ? canonical : `/${canonical}`;
+    // 2. Избегаем дублирования путей (например, /blog/blog/...)
+    const cleanPath = normalizedPath.replace(/\/+/g, '/');
+    // 3. Составляем полный URL
+    canonicalUrl = `${siteUrl}${cleanPath}`;
   } else if (typeof window !== 'undefined') {
-    // Используем текущий путь
-    canonicalUrl = `${siteUrl}${window.location.pathname}`;
+    // Используем текущий путь, но нормализуем его
+    const normalizedPath = window.location.pathname.replace(/\/+/g, '/');
+    canonicalUrl = `${siteUrl}${normalizedPath}`;
   }
   
   return (

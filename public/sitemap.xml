@@ -10,36 +10,42 @@
     <loc>https://polishdom.com/blog</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://polishdom.com/blog/10-sposobow-uczyc-sie-slowek</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://polishdom.com/blog/przygotowanie-do-rozmowy-karta-polaka</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://polishdom.com/blog/polskie-seriale-do-nauki-jezyka</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://polishdom.com/terms-of-service</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://polishdom.com/privacy-policy</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://polishdom.com/sitemap</loc>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

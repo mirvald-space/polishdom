@@ -1,18 +1,10 @@
-# Разрешаем индексировать всем поисковым системам
+# www.robotstxt.org
+
 User-agent: *
 Allow: /
 
-# Запрещаем индексацию административных разделов
-User-agent: *
-Disallow: /admin/
+# Disallow duplicate content
+Disallow: /blog/blog/
 
-# Задержка между запросами для Googlebot
-User-agent: Googlebot
-Crawl-delay: 1
-
-# Задержка между запросами для Yandex
-User-agent: Yandex
-Crawl-delay: 1
-
-# Указываем местоположение XML-карты сайта
+# Sitemap
 Sitemap: https://polishdom.com/sitemap.xml
