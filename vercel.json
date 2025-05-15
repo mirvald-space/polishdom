@@ -1,5 +1,7 @@
 {
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
@@ -23,10 +25,5 @@
     }
   ],
   "trailingSlash": false,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
-    { "src": "/robots.txt", "dest": "/robots.txt" },
-    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
-  ]
+  "errorPage": "/404.html"
 } 
