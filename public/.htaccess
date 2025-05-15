@@ -1,0 +1,73 @@
+# Enable rewriting
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Если запрос не идет к существующему файлу
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # Если запрос не идет к существующей директории
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # Если запрос не идет к существующему симлинку
+  RewriteCond %{REQUEST_FILENAME} !-l
+  # Перенаправление всех остальных запросов на index.html
+  RewriteRule ^(.*)$ index.html [L]
+</IfModule>
+
+# Установка MIME-типов
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType application/json .json
+</IfModule>
+
+# Кэширование статических файлов
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/x-javascript "access plus 1 month"
+  ExpiresByType application/x-shockwave-flash "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Установка заголовков для SEO и безопасности
+<IfModule mod_headers.c>
+  # Включение Cross-Origin Resource Sharing (CORS)
+  Header set Access-Control-Allow-Origin "*"
+  
+  # Включение кэширования в браузере
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|svg|js|css|swf)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+  
+  # Отключение кэширования для HTML и XML
+  <FilesMatch "\.(html|htm|xml)$">
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+  </FilesMatch>
+  
+  # Установка X-Content-Type-Options
+  Header set X-Content-Type-Options "nosniff"
+  
+  # Установка X-XSS-Protection
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Блокировка доступа к .htaccess и другим конфигурационным файлам
+<Files ~ "^\.ht">
+  Order allow,deny
+  Deny from all
+  Satisfy all
+</Files>
+
+# Обработка ошибок
+ErrorDocument 404 /index.html 

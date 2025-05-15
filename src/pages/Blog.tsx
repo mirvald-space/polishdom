@@ -24,6 +24,7 @@ const Blog: React.FC = () => {
         title="Блог - Статьи о польском языке и культуре"
         description="Полезные статьи об изучении польского языка, подготовке к экзаменам, жизни в Польше и польской культуре от PolishDom."
         schema={schemaData}
+        canonical="/blog"
       />
       
       <main>

@@ -138,6 +138,7 @@ const BlogPost: React.FC = () => {
       <SEO 
         title={`${post.title} - PolishDom`}
         description={post.excerpt || "Статья о польском языке и культуре от PolishDom"}
+        canonical={`/blog/${slug}`}
         schema={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",

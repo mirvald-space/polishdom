@@ -26,9 +26,25 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "index.html"),
-        // You can add specific routes to pre-render here
-        // blog: path.resolve(__dirname, "index.html"), 
+        blog: path.resolve(__dirname, "index.html"),
+        blogPost1: path.resolve(__dirname, "index.html"),
+        blogPost2: path.resolve(__dirname, "index.html"),
+        blogPost3: path.resolve(__dirname, "index.html"),
+        terms: path.resolve(__dirname, "index.html"),
+        privacy: path.resolve(__dirname, "index.html"),
+      },
+      output: {
+        // Customize output filenames to create proper directory structure for SEO
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        // Ensure output is optimized
+        manualChunks: undefined
       },
     },
+    // Enable SSR-friendly settings
+    ssrManifest: true,
+    // Использовать esbuild вместо terser для минификации
+    minify: 'esbuild',
   },
 }));
