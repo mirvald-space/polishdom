@@ -1,0 +1,30 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Technology Stack
+
+## Frontend Framework
+- React 18
+- TypeScript
+- Vite as build tool
+
+## UI Components
+- shadcn-ui (based on Radix UI)
+- Tailwind CSS for styling
+- Lucide React for icons
+
+## Routing & State Management
+- React Router for navigation
+- React Query for data fetching
+
+## Content & Utilities
+- React Markdown for rendering markdown content
+- date-fns for date handling
+- zod for validation
+- react-hook-form for forms
+
+## Deployment
+- Configured for Vercel deployment
+- Pre-rendering with react-snap

@@ -1,0 +1,20 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Polish Language Tutor Website Overview
+
+This is a personal website for a Polish language tutor designed to attract new students and organize the teaching process.
+
+## Main Entry Points
+
+- [src/main.tsx](mdc:src/main.tsx) - Application entry point
+- [src/App.tsx](mdc:src/App.tsx) - Main application component
+- [index.html](mdc:index.html) - HTML entry point
+
+## Key Pages
+
+- [src/pages/Index.tsx](mdc:src/pages/Index.tsx) - Homepage
+- [src/pages/Blog.tsx](mdc:src/pages/Blog.tsx) - Blog listing page
+- [src/pages/BlogPost.tsx](mdc:src/pages/BlogPost.tsx) - Individual blog post page

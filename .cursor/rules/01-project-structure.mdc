@@ -1,0 +1,24 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Structure
+
+## Core Directories
+
+- `src/` - Application source code
+  - `components/` - React components
+    - `ui/` - UI components (shadcn-ui) 
+    - `sections/` - Page sections
+    - `layout/` - Layout components
+  - `pages/` - Page components
+  - `hooks/` - Custom React hooks
+  - `lib/` - Utility functions and helpers
+
+## Configuration Files
+
+- [vite.config.ts](mdc:vite.config.ts) - Vite configuration
+- [tailwind.config.ts](mdc:tailwind.config.ts) - Tailwind CSS configuration
+- [tsconfig.json](mdc:tsconfig.json) - TypeScript configuration
+- [package.json](mdc:package.json) - Project dependencies and scripts

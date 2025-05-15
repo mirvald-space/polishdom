@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Development Workflow
+
+## Scripts
+
+Run these commands from the project root:
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production and generate sitemap
+- `npm run build:with-prerender` - Build for production with pre-rendering
+- `npm run preview` - Preview production build locally
+
+## Important Notes
+
+- The site uses React Router for navigation
+- Uses Tailwind CSS for styling
+- Implements shadcn-ui component library
+- Pre-rendering is handled with react-snap
+- SEO metadata is managed with react-helmet-async

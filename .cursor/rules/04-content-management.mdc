@@ -1,0 +1,24 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Content Management
+
+## Content Files
+- [content.md](mdc:content.md) - Main content for the website
+- [strategy.md](mdc:strategy.md) - Strategy content
+- [teacher-questionnaire.md](mdc:teacher-questionnaire.md) - Teacher questionnaire content
+
+## Blog Articles
+Blog posts are managed within the application and rendered using React Markdown.
+
+## Pages
+- Home Page: [src/pages/Index.tsx](mdc:src/pages/Index.tsx)
+- Blog Page: [src/pages/Blog.tsx](mdc:src/pages/Blog.tsx)
+- Blog Post Page: [src/pages/BlogPost.tsx](mdc:src/pages/BlogPost.tsx)
+- Legal Pages:
+  - [src/pages/PrivacyPolicy.tsx](mdc:src/pages/PrivacyPolicy.tsx)
+  - [src/pages/TermsOfService.tsx](mdc:src/pages/TermsOfService.tsx)
+- Sitemap: [src/pages/Sitemap.tsx](mdc:src/pages/Sitemap.tsx)
+- 404 Page: [src/pages/NotFound.tsx](mdc:src/pages/NotFound.tsx)
