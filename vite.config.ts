@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import fs from 'fs';
 
 // Посты блога
 const blogPosts = [
@@ -17,6 +18,7 @@ export default defineConfig(({ mode }) => {
     terms: path.resolve(__dirname, "index.html"),
     privacy: path.resolve(__dirname, "index.html"),
     sitemap: path.resolve(__dirname, "index.html"),
+    notFound: path.resolve(__dirname, "index.html"),
   };
   
   // Добавляем посты блога
@@ -33,6 +35,28 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       react(),
+      {
+        name: 'copy-404-page',
+        writeBundle() {
+          // Копируем 404.html из public в dist после сборки
+          const source = path.resolve(__dirname, 'public/404.html');
+          const destination = path.resolve(__dirname, 'dist/404.html');
+          
+          if (fs.existsSync(source)) {
+            // Создаем директорию если не существует
+            const dir = path.dirname(destination);
+            if (!fs.existsSync(dir)) {
+              fs.mkdirSync(dir, { recursive: true });
+            }
+            
+            // Копируем файл
+            fs.copyFileSync(source, destination);
+            console.log('404.html copied to dist/');
+          } else {
+            console.warn('404.html not found in public/, please create it');
+          }
+        }
+      }
     ].filter(Boolean),
     resolve: {
       alias: {
