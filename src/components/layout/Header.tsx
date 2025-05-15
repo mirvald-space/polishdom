@@ -46,6 +46,9 @@ export const Header: React.FC = () => {
             src="https://cdn.builder.io/api/v1/image/assets/357bfe0bc0f0415b9faa01b415a5e466/09ecf6ed7ff4d307fd9d9778d1b1617bff7f338d?placeholderIfAbsent=true"
             alt="Логотип PolishDom - школа польского языка"
             className="aspect-[1] object-contain w-[26px] min-h-[26px] shrink-0 rounded-[56px]"
+            width={26}
+            height={26}
+            loading="eager"
           />
           <div>PolishdDom</div>
         </Link>
@@ -54,13 +57,26 @@ export const Header: React.FC = () => {
         <button 
           className="font-medium bg-[#FAFAFA] z-20 hover:text-gray-700 transition-colors px-[20px] py-[10px] border border-transparent hover:border-gray-200 rounded-[20px]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="main-menu"
         >
           Меню
         </button>
       </div>
 
       {/* Выпадающее меню для всех разрешений */}
-      <nav className={`flex flex-col p-5 w-full bg-white absolute left-1/2 -translate-x-1/2 shadow-md transition-all duration-300 z-20 max-w-[462px] py-3 ${mobileMenuOpen ? 'opacity-100 translate-y-0 top-[20px] rounded-[20px]' : 'opacity-0 -translate-y-10 pointer-events-none top-[60px]'}`}>
+      <nav 
+        id="main-menu"
+        className={`
+          fixed md:absolute inset-x-4 md:left-1/2 md:-translate-x-1/2
+          bg-white shadow-md transition-all duration-300 z-20
+          max-w-[462px] py-3 rounded-[20px]
+          ${mobileMenuOpen 
+            ? 'opacity-100 translate-y-0 top-[20px]' 
+            : 'opacity-0 -translate-y-10 pointer-events-none top-[60px]'
+          }
+        `}
+      >
           <Link 
             to="/blog" 
             className="py-3 text-center bg-white hover:bg-gray-50 transition-all duration-200 rounded-[20px] mb-2 flex items-center justify-center font-medium"
@@ -103,6 +119,13 @@ export const Header: React.FC = () => {
           >
             FAQ
           </a>
+          <Link 
+            to="/sitemap" 
+            className="py-3 text-center bg-white hover:bg-gray-50 transition-all duration-200 rounded-[20px] mb-2 flex items-center justify-center font-medium"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Карта сайта
+          </Link>
           
           {/* Кнопка закрыть внизу */}
           <button 

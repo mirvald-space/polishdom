@@ -24,12 +24,18 @@ export const SEO: React.FC<SEOProps> = ({
 }) => {
   // Формируем канонический URL
   const siteUrl = "https://polishdom.com";
-  const fullCanonicalUrl = canonical ? `${siteUrl}${canonical}` : undefined;
-  
-  // Получаем текущий путь для автоматического определения канонического URL
-  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
-  const autoCanonical = `${siteUrl}${currentPath}`;
+  let canonicalUrl = siteUrl;
 
+  if (canonical) {
+    // Проверяем, начинается ли canonical с "/"
+    canonicalUrl = canonical.startsWith('/') 
+      ? `${siteUrl}${canonical}` 
+      : `${siteUrl}/${canonical}`;
+  } else if (typeof window !== 'undefined') {
+    // Используем текущий путь
+    canonicalUrl = `${siteUrl}${window.location.pathname}`;
+  }
+  
   return (
     <Helmet>
       {/* Основные мета-теги */}
@@ -37,7 +43,7 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="description" content={description} />
       
       {/* Canonical URL - важно для SEO */}
-      <link rel="canonical" href={fullCanonicalUrl || autoCanonical} />
+      <link rel="canonical" href={canonicalUrl} />
       
       {/* Управление индексацией */}
       {noindex ? (
@@ -50,15 +56,15 @@ export const SEO: React.FC<SEOProps> = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={fullCanonicalUrl || autoCanonical} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
       <meta property="og:site_name" content="PolishDom" />
       
       {/* Twitter Card мета-теги */}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
       
       {/* Язык и региональные настройки */}
       <meta property="og:locale" content="ru_RU" />
@@ -79,6 +85,7 @@ export const SEO: React.FC<SEOProps> = ({
       {/* Дополнительные мета-теги для SEO */}
       <meta name="author" content="PolishDom" />
       <meta name="generator" content="React, Vite" />
+      <meta name="date" content="2025-05-15" />
     </Helmet>
   );
 }; 

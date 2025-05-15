@@ -47,7 +47,7 @@ const Index: React.FC = () => {
     "@type": "LocalBusiness",
     "name": "PolishDom",
     "description": "Уроки польского языка для детей и взрослых. Подготовка к Карте поляка, экзаменам, сертификации.",
-    "image": "/og-image.jpg",
+    "image": "/hero.png",
     "email": "polishdom.info@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -65,7 +65,8 @@ const Index: React.FC = () => {
       ],
       "opens": "09:00",
       "closes": "18:00"
-    }
+    },
+    "dateModified": new Date().toISOString().split('T')[0]
   };
 
   const scrollToResults = () => {
@@ -83,12 +84,10 @@ const Index: React.FC = () => {
         schema={schemaData}
       />
       
-      
-
       <main>
         <Container>
-        <Header />
-        <Hero />
+          <Header />
+          <Hero />
           <MarqueeText items={marqueeItems} />
           <PainPointsAndStats />
           <Results />
@@ -137,8 +136,6 @@ const Index: React.FC = () => {
           <Footer />
         </Container>
       </main>
-
-      
     </div>
   );
 };
