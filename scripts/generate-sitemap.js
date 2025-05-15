@@ -16,8 +16,7 @@ const routes = [
   { path: '/blog/przygotowanie-do-rozmowy-karta-polaka', changefreq: 'monthly', priority: '0.8' },
   { path: '/blog/polskie-seriale-do-nauki-jezyka', changefreq: 'monthly', priority: '0.8' },
   { path: '/terms-of-service', changefreq: 'yearly', priority: '0.5' },
-  { path: '/privacy-policy', changefreq: 'yearly', priority: '0.5' },
-  { path: '/sitemap', changefreq: 'monthly', priority: '0.5' }
+  { path: '/privacy-policy', changefreq: 'yearly', priority: '0.5' }
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
