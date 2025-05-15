@@ -20,7 +20,7 @@ const { createCanvas } = await import('canvas');
 const publicDir = path.join(__dirname, '../public');
 const sizes = [16, 32, 180, 192, 512];
 const colors = {
-  primary: '#0066FF',    // Adjust this to match your brand color
+  primary: '#CA4237',    // Adjust this to match your brand color
   background: '#FFFFFF'  // Background color
 };
 
