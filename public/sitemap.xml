@@ -1,51 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+                http://www.google.com/schemas/sitemap-image/1.1
+                http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
   <url>
     <loc>https://polishdom.com/</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://polishdom.com/hero.png</image:loc>
+      <image:title>PolishDom - Изучение польского языка | Карта поляка | Сертификаты</image:title>
+      <image:caption>Уроки польского языка для детей и взрослых. Подготовка к Карте поляка, экзаменам, сертификации.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://polishdom.com/blog</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://polishdom.com/blog-cover.png</image:loc>
+      <image:title>Блог PolishDom - Статьи о польском языке и культуре</image:title>
+      <image:caption>Полезные материалы для изучения польского языка, советы по подготовке к экзаменам и культурные заметки.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://polishdom.com/blog/10-sposobow-uczyc-sie-slowek</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://polishdom.com/blog/10-sposobow-uczyc-sie-slowek/cover.jpg</image:loc>
+      <image:title>10 способов учить польские слова эффективно - PolishDom</image:title>
+      <image:caption>Эффективные методики запоминания польских слов. Проверенные способы расширения словарного запаса.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://polishdom.com/blog/przygotowanie-do-rozmowy-karta-polaka</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://polishdom.com/blog/przygotowanie-do-rozmowy-karta-polaka/cover.jpg</image:loc>
+      <image:title>Подготовка к собеседованию на Карту поляка - PolishDom</image:title>
+      <image:caption>Советы и рекомендации для успешного прохождения интервью на получение Карты поляка.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://polishdom.com/blog/polskie-seriale-do-nauki-jezyka</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://polishdom.com/blog/polskie-seriale-do-nauki-jezyka/cover.jpg</image:loc>
+      <image:title>Польские сериалы для изучения языка - PolishDom</image:title>
+      <image:caption>Лучшие польские сериалы, которые помогут улучшить понимание речи и расширить словарный запас.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://polishdom.com/terms-of-service</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://polishdom.com/privacy-policy</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://polishdom.com/sitemap</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.6</priority>
   </url>
 </urlset>

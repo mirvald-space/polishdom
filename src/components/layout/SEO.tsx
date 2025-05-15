@@ -10,6 +10,8 @@ export interface SEOProps {
   ogType?: string;
   ogImage?: string;
   twitterCard?: string;
+  keywords?: string;
+  language?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({
@@ -20,7 +22,9 @@ export const SEO: React.FC<SEOProps> = ({
   noindex = false,
   ogType = "website",
   ogImage = "https://polishdom.com/hero.png",
-  twitterCard = "summary_large_image"
+  twitterCard = "summary_large_image",
+  keywords = "польский язык, обучение польскому, карта поляка, сертификат, уроки польского",
+  language = "ru_RU"
 }) => {
   // Формируем канонический URL
   const siteUrl = "https://polishdom.com";
@@ -40,11 +44,29 @@ export const SEO: React.FC<SEOProps> = ({
     canonicalUrl = `${siteUrl}${normalizedPath}`;
   }
   
+  // Базовая SEO schema если пользовательская не предоставлена
+  const defaultSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PolishDom",
+    "url": siteUrl,
+    "logo": `${siteUrl}/logo.png`,
+    "description": description,
+    "sameAs": [
+      "https://facebook.com/polishdom",
+      "https://instagram.com/polishdom",
+      "https://t.me/polishdom"
+    ]
+  };
+
+  const schemaData = schema || defaultSchema;
+  
   return (
-    <Helmet>
+    <Helmet prioritizeSeoTags>
       {/* Основные мета-теги */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
       
       {/* Canonical URL - важно для SEO */}
       <link rel="canonical" href={canonicalUrl} />
@@ -71,7 +93,7 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
       
       {/* Язык и региональные настройки */}
-      <meta property="og:locale" content="ru_RU" />
+      <meta property="og:locale" content={language} />
       <meta name="language" content="Russian" />
       
       {/* Мета-теги для мобильных устройств */}
@@ -80,16 +102,15 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       
       {/* Structured Data (Schema.org) для улучшения отображения в поисковой выдаче */}
-      {schema && (
+      {schemaData && (
         <script type="application/ld+json">
-          {JSON.stringify(schema)}
+          {JSON.stringify(schemaData)}
         </script>
       )}
       
       {/* Дополнительные мета-теги для SEO */}
       <meta name="author" content="PolishDom" />
       <meta name="generator" content="React, Vite" />
-      <meta name="date" content="2025-05-15" />
     </Helmet>
   );
 }; 

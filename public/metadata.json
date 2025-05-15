@@ -1,0 +1,47 @@
+{
+  "/": {
+    "title": "PolishDom - Изучение польского языка | Карта поляка | Сертификаты",
+    "description": "Уроки польского языка для детей и взрослых. Подготовка к Карте поляка, экзаменам, сертификации.",
+    "image": "/hero.png",
+    "priority": "1.0"
+  },
+  "/blog": {
+    "title": "Блог PolishDom - Статьи о польском языке и культуре",
+    "description": "Полезные материалы для изучения польского языка, советы по подготовке к экзаменам и культурные заметки.",
+    "image": "/blog-cover.png",
+    "priority": "0.9"
+  },
+  "/blog/10-sposobow-uczyc-sie-slowek": {
+    "title": "10 способов учить польские слова эффективно - PolishDom",
+    "description": "Эффективные методики запоминания польских слов. Проверенные способы расширения словарного запаса.",
+    "image": "/blog/10-sposobow-uczyc-sie-slowek/cover.jpg",
+    "priority": "0.8"
+  },
+  "/blog/przygotowanie-do-rozmowy-karta-polaka": {
+    "title": "Подготовка к собеседованию на Карту поляка - PolishDom",
+    "description": "Советы и рекомендации для успешного прохождения интервью на получение Карты поляка.",
+    "image": "/blog/przygotowanie-do-rozmowy-karta-polaka/cover.jpg",
+    "priority": "0.8"
+  },
+  "/blog/polskie-seriale-do-nauki-jezyka": {
+    "title": "Польские сериалы для изучения языка - PolishDom",
+    "description": "Лучшие польские сериалы, которые помогут улучшить понимание речи и расширить словарный запас.",
+    "image": "/blog/polskie-seriale-do-nauki-jezyka/cover.jpg",
+    "priority": "0.8"
+  },
+  "/terms-of-service": {
+    "title": "Условия использования - PolishDom",
+    "description": "Правила и условия использования услуг PolishDom.",
+    "priority": "0.5"
+  },
+  "/privacy-policy": {
+    "title": "Политика конфиденциальности - PolishDom",
+    "description": "Политика конфиденциальности PolishDom в отношении персональных данных пользователей.",
+    "priority": "0.5"
+  },
+  "/sitemap": {
+    "title": "Карта сайта - PolishDom",
+    "description": "Полная структура сайта PolishDom для удобной навигации.",
+    "priority": "0.6"
+  }
+}

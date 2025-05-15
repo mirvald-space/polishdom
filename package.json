@@ -25,7 +25,10 @@
     ],
     "source": "dist",
     "skipThirdPartyRequests": true,
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
     "puppeteerIgnoreHTTPSErrors": true,
     "inlineCss": true,
     "removeBlobs": true,
