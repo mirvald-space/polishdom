@@ -113,7 +113,7 @@ const Index: React.FC = () => {
             bgGradient="linear-gradient(to right, #57B9EB, #42A5D7)"
             textColor="text-white"
             image="/channel.png"
-            linkTo="https://t.me/polishdom"
+            linkTo="https://t.me/+uWJA2uwCffE5YmU8"
             isExternal={true}
             blank={true}
             buttonClassName="bg-white text-black hover:bg-white/90 hover:text-black font-bold"
